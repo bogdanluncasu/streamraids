@@ -2,16 +2,16 @@ HEAD:
     ☐ Description
 
 Nav-bar:
-    ☐ Change links
-    ☐ Logo
-    ☐ fix it
+    ✔ Change links @done (18/5/2021 10:11:35)
+    ✔ Logo @done (18/5/2021 10:05:17)
+    ✔ fix it @done (18/5/2021 10:11:40)
         
 Section 1:
     ☐ font of text
     
 Section 2:
-    ☐ change image
+    ✔ change image @done (18/5/2021 10:05:23)
 Section 3:
     
 Section 4:
-
+☐ canviar id
