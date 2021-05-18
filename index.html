@@ -1,164 +1,176 @@
 <!DOCTYPE html>
 <html lang="en">
-<title>StreamRaids</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
-<link rel="stylesheet" href="css/style.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<style>
-body {font-family: "Lato", sans-serif}
-.mySlides {display: none}
-</style>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="./fullpage.min.css" />
+    <link rel="stylesheet" href="./style.css" />
+    <title>Home | StreamRaiders</title>
+    <meta 
+          name="description"
+          content="Lorem">
+    
+  </head>
 
-<!-- Navbar -->
-<div class="w3-top">
-  <div class="w3-bar w3-black w3-card">
-    <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
-    <a href="#" class="w3-bar-item w3-button w3-padding-large">HOME</a>
-    <a href="#about" class="w3-bar-item w3-button w3-padding-large w3-hide-small">ABOUT</a>
-	</div>
-</div>
+  <body>
+    <header class="header">
+      <div class="logo_link">
+        <a class="logo_link link" href="https://poocoin.app/tokens/0x115a49871f02c522090cb45bbe715db406cafa33">
+          <img class ="logo" id="logo" src="media/LOGO.png" alt="StreamRaiders LOGO">
+        </a>
+      </div>
+      <nav class="nav_bar">
+        <a class="nav_bar-a link" id="home" href="#s1">Home</a>
+        <a class="nav_bar-a link" id="blog" href="#s2">About</a>
+        <a class="nav_bar-a link" id="forum" href="#s3">Roadmap</a>
+        <a class="nav_bar-a link" id="help" href="#s4">More</a>
+      </nav>
+    </header>
 
-<!-- Navbar on small screens (remove the onclick attribute if you want the navbar to always show on top of the content when clicking on the links) -->
-<div id="navDemo" class="w3-bar-block w3-black w3-hide w3-hide-large w3-hide-medium w3-top" style="margin-top:26px">
-  <a href="#about" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">ABOUT</a>
-</div>
+    <div id="fullpage">
 
-<!-- Page content -->
-<div class="w3-content" style="max-width:1280px;margin-top:46px; ">
+      <section class="section s1" id="s1">
 
-  <!-- Automatic Slideshow Images -->
-  <div class="mySlides w3-display-container w3-center">
-    <img src="images/1.jpg" style="width:100%; max-height: 680px;">
-    <div class="w3-display-bottommiddle w3-container w3-text-white w3-padding-32 w3-hide-small">
-		<a href="https://exchange.pancakeswap.finance/#/swap?outputCurrency=0x115a49871f02c522090cb45bbe715db406cafa33">
-		<img src="images/pcs.png" class="shortlinks"/>
-		</a>
-		
-		<a href="https://poocoin.app/tokens/0x115a49871f02c522090cb45bbe715db406cafa33">
-			<img src="images/poo.png" class="shortlinks"/>
-		</a>
+        <video id="video" src="media/back-section-1.mp4" muted loop autoplay data-keepplaying></video>
+
+        <div class="overlay"></div>
+
+        <div class="s1_text noselect">
+
+            <p>Welcome to the</p>
+            <a class="chart_button" href="https://poocoin.app/tokens/0x115a49871f02c522090cb45bbe715db406cafa33" target="_blank"><h1 class="theme_color">STREAMRAIDERS</h1></a>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus vel, 
+                necessitatibus iusto Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus vel, 
+                necessitatibus iusto.
+            </p>
+            
+        </div>
+
+        <!-- <div class="text_title noselect">
+          <h1 class="noselect" id="s1_first_h1">Have an <span class="logo_color expand">IDEA</span>?
+            <br>What's <span class="logo_color expand">NEXT</span>?
+          </h1>
+        </div> -->
+
+        <!-- <div class="s1_buttons">
+          <a class="chart_button" href="https://poocoin.app/tokens/0x115a49871f02c522090cb45bbe715db406cafa33" target="_blank">CHART</a>
+          <a class="buy_button" href="https://exchange.pancakeswap.finance/#/swap?outputCurrency=0x115a49871f02c522090cb45bbe715db406cafa33" target="_blank">BUY NOW</a>
+        </div> -->
+
+        <div class="s1_buttons">
+          <a class="buy_button" href="https://exchange.pancakeswap.finance/#/swap?outputCurrency=0x115a49871f02c522090cb45bbe715db406cafa33" target="_blank">GO BUY NOW</a>
+          <!-- <a class="register_button_link" href="https://inventnet.com/register/"><span class="register_button_link_text">REGISTER NOW</span></a> -->
+        </div>
+
+        <div class="social-media">
+          <ul class="social-media">
+            <li><a class="social-link" id="telegram" target="_blank" href="https://t.me/streamraidsbsc"><img id="telegram" src="media/512px-Telegram_logo.svg.png" alt="Telegram"></a></li>
+            <li><a class="social-link" id="twitter" target="_blank" href="https://twitter.com/inventnet"><img id="twitter" src="media/gorjeo.png" alt="Twitter"></a></li>
+            <li><a class="social-link" id="pancake" target="_blank" href="https://exchange.pancakeswap.finance/#/swap?outputCurrency=0x115a49871f02c522090cb45bbe715db406cafa33"><img id="pancake" src="media/logo.4b4c5aed.png" alt="Telegram"></a></li>
+            <li><a class="social-link" id="poocoin" target="_blank" href="https://poocoin.app/tokens/0x115a49871f02c522090cb45bbe715db406cafa33"><img id="poocoin" src="media/poocoin512.png" alt="Twitter"></a></li>
+          </ul>
+        </div>
+
+      </section>
+
+      <section class="section s2" id="s2">
+        <div class="containers2">
+          <div class="subcontainers2">
+            <div class="description">
+				<div class="text_cd">
+					<h2>Comunity Driven</h2>
+					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae, laboriosam?</p>
+				</div>
+				<div class="text_lp">
+					<h2>Automatic LP</h2>
+					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae, laboriosam?</p>
+				</div>
+				<div class="text_sr">
+					<h2>Static Rewards</h2>
+					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae, laboriosam?</p>
+				</div>
+			</div>
+			<div class="img">
+				<img src="media/undraw_Data_re_80ws_1.png" alt="">
+			</div>
+          </div>
+          <div class="subcontainers2">
+				<div class="text_cp">
+				  <h3>Current Price</h3>
+				  <h4>2</h4>
+				</div>
+				<div class="text_hodl">
+				  <h3>Hodlers</h3>
+				  <h4>2</h4>
+				</div>
+				<div class="text_sup">
+				  <h3>Supply</h3>
+				  <h4>2</h4>
+				</div>
+				<div class="text_mc">
+				  <h3>Market Cap</h3>
+				  <h4>2</h4>
+				</div>
+          </div>
+		  <h1 class="none">Lorem ipsum dolor sit amet.</h1>
+        </div>
+
+        
+      </section>
+	  <section class="section s3">
+		<video id="video" src="media/video_Trim.mp4" muted loop autoplay data-keepplaying></video>
+		<h1 class="none">Lorem ipsum dolor sit amet.</h1>
+	  </section>
+
+	  <section class="section s4">
+		  <h1 class="none"></h1>
+		  <div class="containers4">
+			<div class="subcontainers4">
+				<div class="subsubcontainers4">
+					<h2>9% Fees per transaction</h2>
+					<h3>2% Distributed to all holders proportionally</h3>
+					<h3>3% Fee per transaction auto add to liquidity pool</h3>
+					<h3>4% Send to the stream donations wallet</h3>
+				</div>
+				<div>
+
+				</div>
+			</div>
+			<div class="subcontainers4">
+				<h3>Hola</h3>
+				<h3>buenos</h3>
+				<h3>dias</h3>
+				<h3>que</h3>
+				<h3>tal</h3>
+			</div>
+		  </div>
+	  </section>
+
     </div>
-  </div>
-  <div class="mySlides w3-display-container w3-center">
-    <img src="images/2.jpg" style="width:100%; max-height: 680px;">
-    <div class="w3-display-bottommiddle w3-container w3-text-white w3-padding-32 w3-hide-small">
-		<a href="https://exchange.pancakeswap.finance/#/swap?outputCurrency=0x115a49871f02c522090cb45bbe715db406cafa33">
-		<img src="images/pcs.png" class="shortlinks"/>
-		</a>
-		
-		<a href="https://poocoin.app/tokens/0x115a49871f02c522090cb45bbe715db406cafa33">
-			<img src="images/poo.png" class="shortlinks"/>
-		</a>
-    </div>
-  </div>
-  <div class="mySlides w3-display-container w3-center">
-    <img src="images/3.jpg" style="width:100%; max-height: 680px;">
-    <div class="w3-display-bottommiddle w3-container w3-text-white w3-padding-32 w3-hide-small">
-		<a href="https://exchange.pancakeswap.finance/#/swap?outputCurrency=0x115a49871f02c522090cb45bbe715db406cafa33">
-			<img src="images/pcs.png" class="shortlinks"/>
-		</a>
-		
-		<a href="https://poocoin.app/tokens/0x115a49871f02c522090cb45bbe715db406cafa33">
-		<img src="images/poo.png" class="shortlinks"/>
-		</a>
-    </div>
-  </div>
 
-  <div class="w3-container w3-content w3-center w3-padding-64" style="max-width:800px" id="about">
-    <h2 class="w3-wide">ABOUT</h2>
-    <p class="w3-opacity"><i>StreamRaids aims to help small twitch (and not only) streamers around the world.</i></p>
-    <p class="w3-opacity" style="text-align:center"> The streamers will be picked by the community. We'll love to see some streamers in this community as well. </p>
-	
-			<table class="center">
-			  <tr>
-				<td></td>
-				<td>Total supply</td>
-				<td class="price">1.000.000.000.000.000</td>
-			  </tr>
-			  <tr>
-				<td><img src="assets/fire.png" style="width: 20px; height: 20px;"/></td>
-				<td>Initial burn</td>
-				<td class="price">500.000.000.000.000</td>
-			  </tr>
-			  <tr>
-				<td><img src="assets/fee.png" style="width: 20px; height: 20px;"/></td>
-				<td>Tax per transaction</td>
-				<td class="price">9%</td>
-			  </tr>
-			  <tr>
-				<td><img src="assets/marketing.png" style="width: 20px; height: 20px;"/></td>
-				<td>Redistributed</td>
-				<td class="price">2%</td>
-			  </tr>
-			  <tr>
-				<td><img src="assets/staking.png" style="width: 20px; height: 20px;"/></td>
-				<td>Liquidity</td>
-				<td class="price">3%</td>
-			  </tr>
-			  <tr>
-				<td><img src="assets/liquidity.png" style="width: 20px; height: 20px;"/> </td>
-				<td>Stream donation wallet</td>
-				<td class="price">4%</td>
-			  </tr>
-			</table>
-  </div>
-
-
-  <div class="w3-container w3-content w3-center w3-padding-64" style="max-width:800px" id="roadmap">
-    <h2 class="w3-wide">Roadmap</h2>
-	
-	TBD
-</div>
-  
-<!-- End Page Content -->
-</div>
-
-<!-- Footer -->
-<footer class="w3-container w3-padding-64 w3-center w3-opacity w3-light-grey w3-xlarge">
-  <i class="fa fa-instagram w3-hover-opacity"></i>
-  <i class="fa fa-twitter w3-hover-opacity"></i>
-  <a href="https://t.me/streamraidsbsc"><i class="fa fa-telegram w3-hover-opacity"></i></a>
-</footer>
-
-<script>
-// Automatic Slideshow - change image every 4 seconds
-var myIndex = 0;
-carousel();
-
-function carousel() {
-  var i;
-  var x = document.getElementsByClassName("mySlides");
-  for (i = 0; i < x.length; i++) {
-    x[i].style.display = "none";  
-  }
-  myIndex++;
-  if (myIndex > x.length) {myIndex = 1}    
-  x[myIndex-1].style.display = "block";  
-  setTimeout(carousel, 4000);    
-}
-
-// Used to toggle the menu on small screens when clicking on the menu button
-function myFunction() {
-  var x = document.getElementById("navDemo");
-  if (x.className.indexOf("w3-show") == -1) {
-    x.className += " w3-show";
-  } else { 
-    x.className = x.className.replace(" w3-show", "");
-  }
-}
-
-// When the user clicks anywhere outside of the modal, close it
-var modal = document.getElementById('ticketModal');
-window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
-}
-</script>
-
-</body>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TimelineMax.min.js"
+      integrity="sha256-fIkQKQryItPqpaWZbtwG25Jp2p5ujqo/NwJrfqAB+Qk="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"
+      integrity="sha256-lPE3wjN2a7ABWHbGz7+MKBJaykyzqCbU96BJWjio86U="
+      crossorigin="anonymous"
+    ></script>
+    <script src="./fullpage.min.js"></script>
+    <script src="app.js"></script>
+  </body>
 </html>
+<!-- <footer class="footer">
+  <div class="text_footer">
+    <p>
+      <strong>©2021 <a class="footer_link" href="http://inventnet.com">Inventnet.com</a>. </strong>All Rights Reserved
+    </p>
+    </div>
+  <div class="text_footer">
+    Developed by <strong><a class="footer_link" href="https://www.fiverr.com/users/ahernamo/">ahernamo</a>.</strong>
+  </div>
+</footer> -->
