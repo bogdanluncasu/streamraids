@@ -1,0 +1,28 @@
+.shortlinks{
+	width:10%;
+	height: 10%;
+	margin: 2%;
+}
+
+table, tr, td {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+.center {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.price{
+	text-align: right;
+}
+
+body {
+  margin: 0;
+  font-family:courier,arial,helvetica;
+  font-size: 1.5vw;
+  height: 100%; 
+  overflow: scroll !important;
+}
