@@ -15,3 +15,32 @@ Section 3:
     
 Section 4:
 ✔ canviar id @done (18/5/2021 18:52:29)
+GOES WRONG RESOLUTION:
+    -2048x1080 - Boton inicial, s4
+    -2048x1152 - Boton inicial, s4
+    -1920x1200 - Boton inicial
+    -1920x1080 - Boton inicial, s2 parte debajo, s4
+    -1280x1024 - Boton inicial, s3
+    -1366x768 - s2, s3
+    -1280x720 - s2, s3, s4
+    -1152x864 - s2, s3, s4
+    -1024x768 - boton, s2, s3
+    -850x480 - boton, s2, s3, s4
+    -800x600 - boton, s2, s3, s4
+    -720x360 - Inicio, s2, s3, s4
+    -720x350 - lo mismo
+    -720x348 - lo mismo
+    -640x480 - lo mismo
+    -640x350 - same
+    -512x384 - same
+    -320x240
+    -320x240
+    -1680x1050 - boton, s3
+    -1280x720 - s2 i s4
+    -1600x900 - boton
+
+
+
+Changes - bugs:
+    ✔ stream en lugar de strem raid i quitar small @done (18/5/2021 20:30:40)
+    ✔ corrections on grammar @done (18/5/2021 20:34:29)
