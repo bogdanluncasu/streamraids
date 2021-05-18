@@ -1206,21 +1206,39 @@ header{
   /* ------------------------------------------------------------------------------------------- */
 
 }
-@media(max-height: 830px){
+@media(max-height: 920px){
   .subcontainers4 {
-    top: 70%;
-    transform: translate(0%, -70%);
+    top: 60%;
+    transform: translate(0%, -60%);
     height: 55%;
     width: 95%;
     margin-left: 2.5%;
     margin-right: 2.5%;
     padding: 0 5%;
-    padding-top: 20%;
   }
+
   .s2_stats-container{
     padding: 0 3em 3em 7em;
   }
 }
+
+@media(max-height: 830px){
+  .subcontainers4 {
+    top: 60%;
+    transform: translate(0%, -60%);
+    height: 55%;
+    width: 95%;
+    margin-left: 2.5%;
+    margin-right: 2.5%;
+    padding: 0 5%;
+  }
+
+  .s2_stats-container{
+    padding: 0 3em 3em 7em;
+  }
+}
+
+
 
 @media(max-height: 810px){
   #logo{
@@ -1303,7 +1321,6 @@ header{
     margin-left: 2.5%;
     margin-right: 2.5%;
     padding: 0 5%;
-    padding-top: 20%;
   }
 }
 
@@ -1334,7 +1351,6 @@ header{
     margin-left: 2.5%;
     margin-right: 2.5%;
     padding: 0 5%;
-    padding-top: 20%;
   }
 }
 
@@ -1345,6 +1361,7 @@ header{
 }
 
 @media(max-width: 1180px){
+
   .subsubcontainers4 h3 {
     font-size: 0.5em;
   }
@@ -1413,6 +1430,9 @@ header{
     justify-content: space-between;
     align-items: center;
     padding: 0 7em 0 7em;
+  }
+  .s2_stats-container{
+    display: none;
   }
   .description{
     padding: 0;

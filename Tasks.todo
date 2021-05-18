@@ -43,3 +43,5 @@ GOES WRONG RESOLUTION:
 Changes - bugs:
     ✔ stream en lugar de strem raid i quitar small @done (18/5/2021 20:30:40)
     ✔ corrections on grammar @done (18/5/2021 20:34:29)
+    ☐ Nav bar not working correctly 
+    ☐ When navigating the web using the navbar, it doesn't detect a change on the page and it crashes when navigating with the mouse
