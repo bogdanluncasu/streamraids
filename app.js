@@ -1,3 +1,42 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
 TweenMax.defaultEase = Linear.easeOut;
 
 window.mobileAndTabletCheck = function() {
@@ -28,3 +67,4 @@ new fullpage("#fullpage", {
     }
   }
 });
+*/
