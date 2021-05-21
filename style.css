@@ -38,25 +38,25 @@
 
 .section{
   width: 100vw;
-  height: fit-content;
+  height: min-content;
   display: flex;
-  margin: 1rem 0;
+  margin: 0 0 1rem 0;
   background-color: white;
 }
 
 .body{
   background: var(--gradient_purple);
-  /* background-repeat: no-repeat; */
+  background-repeat: no-repeat;
 }
 
 /* HEADER -------------------------------------------------------------*/
 
-header{
+.header{
   position: fixed;
   z-index: 100000;
   top: 0;
   left: 0;
-  width: 100%;
+  width: 100vw;
   height: 4rem;
   font-size: 1rem;
   padding: 1% 1%;
@@ -84,20 +84,23 @@ header{
 /* Section 1: Home ----------------------------------------------------------*/
 
 .s1 {
+  height: 100vh;
+  width: 100vw;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: white;
+  background: black;
   color: var(--gradient_purple);
   z-index: 10;
 }
 
-.s1_video{
+#s1_video{
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
+  opacity: 0.8;
   object-fit: cover;
 }
 
@@ -109,25 +112,26 @@ header{
   width: 100%;
   height: 100%;
   background: black;
-  opacity: 0.2;
+  opacity: 0.1;
   mix-blend-mode: overlay;
 }
 
 .s1_text{
   position: absolute;
-  z-index: 100;
-  top: 70%;
+  z-index: 1000;
+  top: 80%;
   left: 20%;
-  transform: translate(-20%, -70%);
+  transform: translate(-20%, -80%);
   width: 60%;
+  color: white;
+  font-size: 1rem;
 }
-/*
-.s1_text a h1{
-  font-size: 7.5em;
+
+.s1-text_titleName{
+  font-size: 4em;
   font-weight: 800;
-  line-height: 1.4em;
-  letter-spacing: 0.075em;
-  font-family: ; 
+  line-height: 1.75em;
+  letter-spacing: 0.085em;
   -webkit-text-stroke: 1px black;
   text-shadow:
       3px 3px 0 #000,
@@ -137,23 +141,16 @@ header{
       1px 1px 0 #000;
 }
 
-.s1_text a{text-decoration: none;}
-.s1_text a:link{text-decoration: none; color: white;}
-.s1_text a:visited{text-decoration: none; color: white;}
-.s1_text a h1:hover{
-  color:var(--main-color);
-  height: 100%;
-  width: 8em;
-  transform: scale(1.1);
-  border-color: var(--main-color);
+.s1-text_titleName:hover{
+  font-size: 5em;
 }
 
-.s1_text p{
-  font-size: 2em;
-  line-height: 1.75em;
+.s1-text_description{
+  font-size: 1.5em;
+  line-height: 1.65em;
   text-anchor: end;
 }
-
+/*
 .s1_buttons a{
   font-size: 3em;
   font-weight: 600;
@@ -302,7 +299,7 @@ header{
 }
 
 #s4-div_title{
-
+  font-size: 5em;
 }
 
 #s4-div_description{
@@ -336,13 +333,13 @@ header{
 }
 
 .s4-legend_item p{
-  
+  font-size: 1.3em;
 }
 
 #s4-div_info{
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-around;
 }
 
 .s4-info_item{
@@ -352,20 +349,38 @@ header{
 
 .s4-info_name{
   margin-right: 1em;
+  font-size: 1.3em;
 }
 
 .s4-info_number{
+  font-size: 1.4em;
+  color: var(--main-color);
+  font-weight: bold;
+}
+
+.s4-info_fee_item{
   
 }
 
-.s4-info_item ul{
-  list-style-position: inside;
-  margin-left: 1em;
+.s4-info_fee_name{
+  font-size: 1.3em;
 }
 
-.s4-info_item ul li{
-  
+.s4-info_fee_number{
+  text-indent: 2em;
+  font-size: 1.4em;
+  display: flex;
+  flex-direction: row;
 }
+
+.s4-info_fee_number p {
+  color: var(--main-color);
+  font-weight: bold;
+  margin-right: 0.7em;
+}
+
+/* 
+ */
 
 /* Section 5: Dev Team ----------------------------------------------------------*/
 
