@@ -476,6 +476,10 @@
   flex-direction: column;
   justify-content: space-evenly;
   padding: 5em 15em;
+  background-image: url(./details-img/details-about_2.png);
+  background-repeat: no-repeat;
+  background-position: top left;
+  background-size: 30%,30%;
 }
 
 #s2-top{
@@ -672,8 +676,19 @@ footer{
   height: 100%;
 }
 
+.foot-developedby_link:hover{
+  color: rgb(81, 81, 81);
+  height: 100%;
+}
 
+.foot-developedby_link:link{
+  text-decoration: none;
+  color: var(---main-color);
+}
 
+.foot-developedby_link{
+  text-decoration: none;
+}
 
 
 
