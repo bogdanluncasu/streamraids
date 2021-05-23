@@ -429,6 +429,10 @@
   flex-direction: column;
   padding: 2rem;
   font-size: 1rem;
+  background-image: url(./details-img/details-about_1.png);
+  background-repeat: no-repeat;
+  background-position: bottom right;
+  background-size: 50%,50%;
 }
 
 .s2-div_About{
@@ -589,6 +593,7 @@
   flex-direction: column;
   padding: 2rem 5rem;
   font-size: 1rem;
+  margin: 0;
 }
 
 .s5-div_team{
@@ -628,9 +633,32 @@
 
 /* Footer ----------------------------------------------------------*/
 
+footer{
+  width: 100vw;
+  height: min-content;
+  display: flex;  
+  flex-direction: column;
+  background-color: transparent;
+}
 
+.foot-div{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
 
+.foot-info_socials{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}
 
+.foot-info_socials_img{
+  height: 100%;
+}
 
 
 
