@@ -51,6 +51,32 @@
 .body{
   background: var(--gradient_purple);
   background-repeat: no-repeat;
+  overflow-x: hidden;
+}
+
+/* SCROLLBAR -------------------------------------------------------------*/
+
+/* width */
+::-webkit-scrollbar {
+  width: 0.5rem;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 1rem;
+  box-shadow: inset 0 0 0.35rem grey; 
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 1rem;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }
 
 /* HEADER -------------------------------------------------------------*/
@@ -89,27 +115,27 @@
 
 .side_bar{
   position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 6.5rem;
-  height: 6.5rem;
-  border-radius: 6.5rem;
+  top: 96.2%;
+  left: 98.3%;
+  transform: translate(-98.3%, -96.2%);
+  width: 4rem;
+  height: 4rem;
+  border-radius: 4rem;
   background: #9147ff;
   transition: 0.5s;
   z-index: 100000;
   overflow: hidden;
   font-size: 1rem;
-  transition: width 0.25s, height 1s;
-  transition-delay: 0s, 0s;
+  transition: width 0.25s, height 2.5s ease-in-out;
+  transition-delay: 0s, 0.75s;
 	box-shadow: 2px 2px 3px #999;
 }
 
 .side_bar.active{
-  width: 6.5rem;
-  height: 32.5rem;
+  width: 4rem;
+  height: 20rem;
   border-radius: 3rem;
-  transition: width 0.25s, height 1s;
+  transition: width 0.25s, height 1.25s ease-out;
   transition-delay: 0s, 0s;
 	box-shadow: 0px 0px 0px #999;
 }
@@ -119,13 +145,14 @@
   top: 0;
   left: 0;
   width: 100%;
-  height: 6.5rem;
+  height: 4rem;
   display: flex;
   justify-content: center;
   align-items: center;
   background: #9147ff;
   border-radius: 3rem;
-  transition: top 1s, left 0s, background 1.25s;
+  transition: top 1s, left 0s, background 2s;
+  transition-delay: 0s, 0s, 1s;
   cursor: pointer;
 }
 
@@ -139,25 +166,29 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: top 1s, left 0s, background 0.5s;
+  transition: top 0s, left 0s, background 1.25s;
 }
 
 .toggle::before{
   content: "+";
   position: absolute;
-  font-size: 5em;
+  font-size: 3em;
   color: white;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 6.5rem;
-  height: 6.5rem;
+  width: 4rem;
+  height: 4rem;
   font-weight: 400;
-  transition: 0.5s;
+  transition: 2s;
+  transform: rotate(-360deg);
+  transition-delay: 0.9s;
 }
 
 .toggle.active::before{
   transform: rotate(315deg);
+  transition: transform 1.25s;
+  transition-delay: 0s;
 }
 
 .side_bar_list{
@@ -167,15 +198,19 @@
   width: 100%;
   height: 80%;
   padding: 5%;
+  transition: top 1.5s;
+  transition-delay: 0s;
 }
 
 .side_bar_list.active{
-  position: absolute;
-  top: 0;
+  position: relative;
+  top: -20%;
   left: 0;
   width: 100%;
   height: 80%;
   padding: 5%;
+  transition: top 0s;
+  transition-delay: 0s;
 }
 
 .side_bar-list-item{
@@ -193,6 +228,7 @@
   height: 100%;
   display: flex;
   color: white;
+  transition: 0.75s;
 }
 
 .social_media-img_span{
@@ -213,42 +249,50 @@
 
 .social_media-img_pancake{
   opacity: 0;
-  transition: 4s;
+  transition: opacity 0.25s;
+  transition-delay: 0.85s;
 }
 
 .social_media-img_pancake.active{
   opacity: 1;
-  transition: 4s;
-}
-
-.social_media-img_twitter{
-  opacity: 0;
-  transition: 4s;
-}
-
-.social_media-img_twitter.active{
-  opacity: 1;
-  transition: 4s;
+  transition: opacity 2s;
+  transition-delay: 0.75s;
 }
 
 .social_media-img_twitch{
   opacity: 0;
-  transition: 4s;
+  transition: opacity 0.25s;
+  transition-delay: 1s;
 }
 
 .social_media-img_twitch.active{
   opacity: 1;
-  transition: 4s;
+  transition: opacity 2s;
+  transition-delay: 1s;
+}
+
+.social_media-img_twitter{
+  opacity: 0;
+  transition: opacity 0.25s;
+  transition-delay: 1.15s;
+}
+
+.social_media-img_twitter.active{
+  opacity: 1;
+  transition: opacity 2s;
+  transition-delay: 1.25s;
 }
 
 .social_media-img_telegram{
   opacity: 0;
-  transition: 4s;
+  transition: opacity 0.25s;
+  transition-delay: 1.3s;
 }
 
 .social_media-img_telegram.active{
   opacity: 1;
-  transition: 4s;
+  transition: opacity 2s;
+  transition-delay: 1.5s;
 }
 
 /* Añadir esto en otro momento o resolución si eso */
@@ -276,58 +320,8 @@
 .side_bar-social_media:hover{
   color: var(--main-color);
   font-size: 1em;
+  transform: scale(1.3);
 }
-
-
-
-
-
-/*
-.side_bar{
-  position: relative;
-  z-index: 1000;
-  top: 90%;
-  left: 98%;
-  transform: translate(-98%, -90%);
-  width: 5%;
-  height: 40%;
-  font-size: 1rem;
-  padding: 1% 0.5%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content:space-around;
-  border-radius: 8em;
-  background: linear-gradient(180deg, rgb(245, 197, 255) 6%, rgb(244, 182, 255) 38%, rgb(246, 163, 255) 71%, rgb(234, 148, 255) 100%);
-  backdrop-filter: blur(2.5px);
-	box-shadow: 2px 2px 3px #999;
-  transition: 0.5s;
-}
-*/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 /* Section 1: Home ----------------------------------------------------------*/
 
@@ -383,6 +377,7 @@
   line-height: 1.75em;
   letter-spacing: 0.085em;
   -webkit-text-stroke: 1px black;
+  transition: 1s;
   text-shadow:
       3px 3px 0 #000,
     -1px -1px 0 #000,  
@@ -476,15 +471,8 @@
 #s2-mid{
   display: flex;
   flex-direction: row;
-  margin: 4em 0;
-}
-
-#s2-bot{
-  display: flex;
-  flex-direction: column;
   margin-top: 4em;
 }
-
 
 .s2-description_title{
   font-size: 3em;
@@ -654,9 +642,17 @@ footer{
   flex-direction: row;
   justify-content: space-evenly;
   align-items: center;
+  width: 10%;
 }
 
 .foot-info_socials_img{
+  height: 100%;
+  width: 25%;
+  padding: 2.5%;
+}
+
+.foot-info_socials_img img{
+  width: 100%;
   height: 100%;
 }
 
