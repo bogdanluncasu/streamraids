@@ -54,6 +54,31 @@
   background-repeat: no-repeat;
   overflow-x: hidden;
 }
+/* START ---------------------------------------------------------------- */
+.ml4-div{
+  width: 100vw;
+  height: 100vh;
+  background-color: #000;
+  background: #000;
+  z-index: 100000000;
+}
+
+.ml4 {
+  position: absolute;
+  font-weight: 900;
+  font-size: 4.5em;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  color: #9147ff;
+  z-index: 100000000;
+}
+.ml4 .letters {
+  position: relative;
+  margin: auto;
+  opacity: 0; 
+  z-index: 100000000;
+}
 
 /* SCROLLBAR -------------------------------------------------------------*/
 
