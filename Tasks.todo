@@ -1,11 +1,21 @@
 Changes - bugs:
     ☐ Nav bar not working correctly
-    Canviar color de side_bar i side_bar active cuandoa acabe
+    ☐ Canviar color de side_bar i side_bar active cuandoa acabe
+    ☐ Canviar imatges
+    ☐ Ficar imatge a la dreta del why
+    ☐ Canviar el blanc per el gris de altura
+
+
+Coses canviades:
+    He ficat un text-align al s2-description_text pq estigui mes formal
+    Tmb he ficat interrogants pq wtf sino no es pregunta lol
+
+
     
     
 Extra ideas:
     ☐ Boss Linkedin
-    ☐ Favicon
+    ☐ Favicon (cal el logo)
 Secciones HomePage:
     ☐ Landing Page
     ☐ Details/Info

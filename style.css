@@ -13,6 +13,7 @@
   --gradient_purple3: linear-gradient(148deg, rgba(250,225,255,1) 6%, rgba(240,155,255,1) 38%, rgba(238,119,252,1) 71%, rgba(157,92,255,1) 100%);
   --gradient_purple2: linear-gradient(148deg, rgba(250,225,255,1) 6%, rgba(240,155,255,1) 32%, rgba(238,119,252,1) 61%, rgba(145,71,255,1) 100%);
   --gradient_purple: linear-gradient(148deg, rgba(250,225,255,1) 6%, rgba(240,155,255,1) 38%, rgba(238,119,252,1) 71%, rgba(172,117,255,1) 100%);
+  --background_color: linear-gradient(90deg, rgba(241,128,254,1) 0%, rgba(199,110,255,1) 61%, rgba(145,71,255,1) 100%);
 }
 
 .noselect {
@@ -49,7 +50,7 @@
 }
 
 .body{
-  background: var(--gradient_purple);
+  background: var(--background_color);
   background-repeat: no-repeat;
   overflow-x: hidden;
 }
@@ -128,7 +129,7 @@
   font-size: 1rem;
   transition: width 0.25s, height 2.5s ease-in-out;
   transition-delay: 0s, 0.75s;
-	box-shadow: 2px 2px 3px #999;
+	/* box-shadow: 2px 2px 3px #999; Shadow of the button */
 }
 
 .side_bar.active{
@@ -419,19 +420,20 @@
 }
 
 #buy_button:hover{
-  color: #9147ff;
-  border-color: #9147ff;
+  color: white;
+  border-color: black;
   font-size: 1.75em;
   border-width: 0.2em;
   background-color: rgba(104, 104, 104, 0.8);
+  background-color: #9147ff;
   backdrop-filter: blur(1px);
 	box-shadow: 2px 2px 3px rgb(0, 0, 0);
-  text-shadow:
-      2px 2px 0 #000,
-    -1px -1px 0 #000,  
-     1px -1px 0 #000,
-     -1px 1px 0 #000,
-      1px 1px 0 #000;
+  /* text-shadow:
+      2px 2px 0 #9147ff,
+    -1px -1px 0 #9147ff,  
+     1px -1px 0 #9147ff,
+     -1px 1px 0 #9147ff,
+      1px 1px 0 #9147ff; */
 }
 
 /* Section 2: About ----------------------------------------------------------*/
@@ -499,11 +501,16 @@
   margin-bottom: 0.5em;
   color: var(--main-color);
   font-weight: bold;
+  /* Així es com es fa lo del titul igual que el background */
+  background: var(--background_color);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .s2-description_text{
   font-size: 1.5em;
   margin-top: 0.5em;
+  text-align: justify;
 }
 
 #s2-description_mid{
