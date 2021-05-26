@@ -60,9 +60,9 @@ anime.timeline({loop: false})
   }).add({
     targets: '.ml4-div',
     opacity: 0,
-    duration: 1000,
+    duration: 800,
     easing: "easeInExpo",
-    delay: ml4.delay
+    delay: 300
   });
 
 // ------------------------------------------------------------------------------

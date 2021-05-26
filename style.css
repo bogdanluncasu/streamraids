@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap');
 
+/* Programado en 1536 x 722 */
+
 * {
   margin: 0;
   padding: 0;
@@ -55,18 +57,21 @@
   overflow-x: hidden;
 }
 /* START ---------------------------------------------------------------- */
+
 .ml4-div{
+  position: relative;
   width: 100vw;
   height: 100vh;
   background-color: #000;
   background: #000;
   z-index: 100000000;
+  font-size: 1rem;
 }
 
 .ml4 {
   position: absolute;
   font-weight: 900;
-  font-size: 4.5em;
+  font-size: 10em;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
