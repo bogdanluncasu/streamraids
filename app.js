@@ -74,7 +74,6 @@ document.querySelector('.toggle').onclick = function(){
 
 // ------------------------------------------------------------------------------
 
-
 function onVisible(element, callback) {
   new IntersectionObserver((entries, observer) => {
     entries.forEach(entry => {
@@ -97,18 +96,19 @@ onVisible(about, ()=> about.classList.add('about_neon'));
 onVisible(roadmap, ()=> roadmap.classList.add('roadmap_neon'));
 onVisible(tokenomics, ()=> tokenomics.classList.add('tokenomics_neon'));
 onVisible(theTeam, ()=> theTeam.classList.add('theTeam_neon'));
-// divider -----------------------------------------------------------------------------
+// -----------------------------------------------------------------------------
 
 
 // s2 -----------------------------------------------------------------------------
-const s2_top = document.querySelector('#s2-top')
-const s2_description_mid = document.querySelector('#s2-description_mid')
-const s2_img = document.querySelector('.s2-img')
+const s2_description_text = document.querySelectorAll('.s2-description_text');
+const s2_description_text_top = s2_description_text[0];
+const s2_description_text_mid = s2_description_text[1];
+const s2_img = document.querySelector('.s2-img');
 
-onVisible(s2_top, ()=> s2_top.classList.add('appear_left'));
-onVisible(s2_description_mid, ()=> s2_description_mid.classList.add('appear_right'));
+onVisible(s2_description_text_top, ()=> s2_description_text_top.classList.add('appear_left'));
+onVisible(s2_description_text_mid, ()=> s2_description_text_mid.classList.add('appear_right'));
 onVisible(s2_img, ()=> s2_img.classList.add('appear_left'));
-// s2 -----------------------------------------------------------------------------
+// -----------------------------------------------------------------------------
 
 // roadmap_ball -----------------------------------------------------------------------------
 
@@ -118,8 +118,18 @@ const roadmap_ball_mid = document.getElementById('s3-timeline_circle_mid');
 onVisible(roadmap_ball_top, ()=> roadmap_ball_top.classList.add('fullfill_top'));
 onVisible(roadmap_ball_mid, ()=> roadmap_ball_mid.classList.add('fullfill_mid'));
 
+// -----------------------------------------------------------------------------
 
+const letters = document.querySelectorAll('.letter_blink');
+const s2_question = letters[0];
+const s2_o = letters[1];
+const s3_title = letters[2];
 
+onVisible(s2_question, ()=> s2_question.classList.add('s2_question_blinking'));
+onVisible(s2_o, ()=> s2_o.classList.add('s2_o_blinking'));
+onVisible(s3_title, ()=> s3_title.classList.add('title_blink'));
+
+// s5 ------------------------------------------------------------------------------
 
 
 

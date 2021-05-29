@@ -81,8 +81,7 @@ section{
 }
 
 .about_neon{
-  color: hsl(300, 98%, 48%);
-  /* animation: about_blinking 4s linear; */
+  color: hsl(320, 98%, 48%);
   animation: about_blinking 1s reverse;
 }
 
@@ -101,30 +100,6 @@ section{
   animation: theTeam_blinking 4s reverse;
 }
 
-/* @keyframes about_blinking{
-  0%, 18%, 20%, 70%, 72%, 73%
-  {
-    color: black;
-    box-shadow:
-    inset 0 0 0.625rem currentColor,
-    inset 0 0 1.25rem currentColor,
-    0 0 0.1rem currentColor,
-    0 0 0.4rem currentColor,
-    0 0 0.6rem currentColor;
-
-  }
-  18.5%, 20.5%, 70.5%, 72.5%, 73.1%, 100%
-  {
-    color: hsl(300, 98%, 48%);
-    box-shadow:
-    inset 0 0 0.625rem currentColor,
-    inset 0 0 1.25rem currentColor,
-    0 0 0.1rem currentColor,
-    0 0 0.4rem currentColor,
-    0 0 0.6rem currentColor;
-  }
-} */
-
 @keyframes about_blinking{
   0%, 60%, 70%
   {
@@ -139,7 +114,7 @@ section{
   }
   40%, 65%, 100%
   {
-    color: hsl(300, 98%, 48%);
+    color: hsl(320, 98%, 48%);
     box-shadow:
     inset 0 0 0.625rem currentColor,
     inset 0 0 1.25rem currentColor,
@@ -222,17 +197,17 @@ section{
 }
 
 .appear_left{
-  animation: appear_left 2s;
+  animation: appear_left 4s ease-in-out;
 }
 
 @keyframes appear_left{
   0%{
     opacity: 0;
-    transform: translateX(-10rem);
+    transform: translateX(-75rem);
   }
   60%{
     opacity: 1;
-    transform: translateX(0.1em);
+    transform: translateX(2em);
   }
   100%{
     opacity: 1;
@@ -241,24 +216,23 @@ section{
 }
 
 .appear_right{
-  animation: appear_right 2s;
+  animation: appear_right 4s ease-in-out;
 }
 
 @keyframes appear_right{
   0%{
     opacity: 0;
-    transform: translateX(6rem);
+    transform: translateX(50rem);
   }
   60%{
     opacity: 1;
-    transform: translateX(-0.1em);
+    transform: translateX(-2em);
   }
   100%{
     opacity: 1;
     transform: translateX(0em);
   }
 }
-
 
 /* START ---------------------------------------------------------------- */
 
@@ -396,8 +370,6 @@ section{
   color: hsl(51, 100%, 55%);
 }
 
-
-
 /* SOCIAL MEDIA ----------------------------------------------------------*/
 
 .side_bar{
@@ -414,7 +386,6 @@ section{
   font-size: 1rem;
   transition: width 0.25s, height 2.5s ease-in-out, background 1.25s, box-shadow 1.25s;
   transition-delay: 0s, 0.75s, 0s, 0s;
-	/* box-shadow: 2px 2px 3px #999; Shadow of the button */
 }
 
 .side_bar:hover{
@@ -431,11 +402,6 @@ section{
   border-radius: 3rem;
   transition: width 0.25s, height 1.25s ease-out;
   transition-delay: 0s, 0s;
-  /* background: hsl(290, 90%, 54%);
-  box-shadow: 0 0 0.3rem hsl(290, 90%, 54%),
-  0 0 0.75rem hsl(290, 90%, 54%),
-  0 0 1rem hsl(290, 90%, 54%),
-  0 0 3rem hsl(290, 90%, 54%); */
 }
 
 .side_bar.active:hover{
@@ -677,6 +643,7 @@ section{
   -webkit-box-reflect: below 0.001em linear-gradient(transparent, hsla(275, 0%, 0%, 0.267));
   line-height: 0.55em;
   outline: none;
+  transition: 1s;
   color: #fff;
   text-shadow: 0 0 0.625rem hsl(287, 98%, 48%), 
     0 0 1.25rem hsl(287, 98%, 48%),
@@ -685,45 +652,28 @@ section{
     0 0 10rem hsl(287, 98%, 48%);
 }
 
+.s1-text_titleName{text-decoration: none; font-family:'Josefin Sans', sans-serif;}
+.s1-text_titleName:link{text-decoration: none; font-family:'Josefin Sans', sans-serif;}
+.s1-text_titleName:visited{text-decoration: none; font-family:'Josefin Sans', sans-serif;}
+.s1-text_titleName:hover{font-family:'Josefin Sans', sans-serif;}
+
 .s1-text_titleName span{
   font-family:'Josefin Sans', sans-serif;
 }
 
 .s1_blink{
   animation: animate 10s linear infinite;
-  animation-delay: 8s;
+  animation-delay: 0s;
 }
 
 #s1_blink_1{
-  animation-delay: 9s;
+  animation-delay: 1s;
 }
 #s1_blink_3{
-  animation-delay: 13s;
+  animation-delay: 5s;
 }
 #s1_blink_4{
-  animation-delay: 10s;
-}
-
-@keyframes animate2{
-  0%, 18%, 20%, 70%, 72%, 73%
-  {
-    color: hsl(0, 0%, 17%);
-    text-shadow: 0 0 0.625rem hsla(275, 65%, 16%, 0.35), 
-    0 0 1.25rem hsla(275, 65%, 16%, 0.35),
-    0 0 2.5rem hsla(275, 65%, 16%, 0.35),
-    0 0 5rem hsla(275, 65%, 16%, 0.35),
-    0 0 10rem hsla(275, 65%, 16%, 0.35);
-
-  }
-  18.5%, 20.5%, 70.5%, 72.5%, 73.1%, 100%
-  {
-    color: hsl(0, 0%, 100%);
-    text-shadow: 0 0 0.625rem hsl(287, 98%, 48%), 
-    0 0 1.25rem hsl(287, 98%, 48%),
-    0 0 2.5rem hsl(287, 98%, 48%),
-    0 0 5rem hsl(287, 98%, 48%),
-    0 0 10rem hsl(287, 98%, 48%);
-  }
+  animation-delay: 2s;
 }
 
 @keyframes animate{
@@ -747,22 +697,6 @@ section{
     0 0 10rem hsl(287, 98%, 48%);
   }
 }
-
-.s1-text_titleName{text-decoration: none; font-family:'Josefin Sans', sans-serif;}
-.s1-text_titleName:link{text-decoration: none; font-family:'Josefin Sans', sans-serif;}
-.s1-text_titleName:visited{text-decoration: none; font-family:'Josefin Sans', sans-serif;}
-.s1-text_titleName:hover{font-family:'Josefin Sans', sans-serif;}
-
-/* 
-.s1-text_titleName:hover{
-  font-size: 4.5em;
-}
-
-.s1-text_description{
-  font-size: 1.5em;
-  line-height: 1.5em;
-  text-anchor: end;
-} */
 
 .s1_buttons{
   position: absolute;
@@ -903,7 +837,7 @@ section{
 #s2-top{
   display: flex;
   flex-direction: column;
-  margin-bottom: 2em;
+  padding-bottom: 2em;
 }
 
 
@@ -911,11 +845,11 @@ section{
   display: flex;
   flex-direction: row;
   align-items: center;
-  margin-top: 2em;
+  padding-top: 2em;
 }
 
 .s2-description_title{
-  font-size: 5rem;
+  font-size: 6.5rem;
   line-height: 0.85em;
   outline: none;
   color: #fff;
@@ -930,9 +864,14 @@ section{
     0 0 4rem hsl(320, 100%, 30%);
 }
 
+#s2_how{
+  text-align: left;
+}
+
 .s2-description_text{
+  width: 100%;
   font-size: 1.2em;
-  margin-top: 1.5em;
+  padding-top: 2.5rem;
   text-align: justify;
   color: white;
 }
@@ -950,10 +889,6 @@ section{
   width: 40%;
 }
 
-
-
-
-
 /* Section 3: Roadmap ----------------------------------------------------------*/
 
 .s3{
@@ -961,13 +896,22 @@ section{
   align-items: center;
   padding: 7.5rem 11rem 7.5rem;
   background-color: hsl(0, 0%, 0%);
+  color: #fff;
+  text-shadow:
+    0 0 0.3125rem hsl(0, 0%, 90%), 
+    0 0 0.625rem hsl(205, 98%, 70%), 
+    0 0 1.25rem hsl(205, 98%, 60%),
+    0 0 2rem hsl(205, 98%, 50%),
+    0 0 2.5rem hsl(205, 98%, 40%),
+    0 0 4rem hsl(205, 100%, 30%);
 }
 
 .s3-div_Roadmap{
   width: 100%;
   display: flex;
   flex-direction: column;
-
+  color: #fff;
+  text-shadow: none;
 }
 
 #s3-div_title{
@@ -1050,6 +994,7 @@ section{
 }
 
 #s3-timeline_circle_top{
+  background: radial-gradient(hsl(0, 0%, 80%) 10%, hsl(210, 90%, 54%) 80%);
   box-shadow: 0 0 0.3rem hsl(210, 90%, 54%),
   0 0 0.75rem hsl(210, 90%, 54%),
   0 0 1rem hsl(210, 90%, 54%),
@@ -1063,420 +1008,24 @@ section{
 }
 
 .fullfill_top{
-  background: hsl(210, 90%, 54%);
-  animation: filling 3s linear;
-  animation-delay: 0s;
+  animation: blinking_top 2.5s linear;
 }
 
 .fullfill_mid{
   animation: blinking_mid 5s linear infinite;
-  animation-delay: 0s;
 }
 
-@keyframes filling{
+@keyframes blinking_top{
   0%
   {
-    background: radial-gradient(hsl(210, 90%, 54%) 0%, transparent 2%, transparent 100%);
-  }
-  1%
-  {
-    background: radial-gradient(hsl(210, 90%, 54%) 1%, transparent 2%, transparent 100%);
-  }
-  2%
-  {
-    background: radial-gradient(hsl(210, 90%, 54%) 2%, transparent 3%, transparent 100%);
-  }
-  3%
-  {
-    background: radial-gradient(hsl(210, 90%, 54%) 3%, transparent 4%, transparent 100%);
-  }
-  4%
-  {
-    background: radial-gradient(hsl(210, 90%, 54%) 4%, transparent 5%, transparent 100%);
-  }
-  5%
-  {
-    background: radial-gradient(hsl(210, 90%, 54%) 5%, transparent 6%, transparent 100%);
-  }
-  6%
-  {
-    background: radial-gradient(hsl(210, 90%, 54%) 6%, transparent 7%, transparent 100%);
-  }
-  7%
-  {
-    background: radial-gradient(hsl(210, 90%, 54%) 7%, transparent 8%, transparent 100%);
-  }
-  8%
-  {
-    background: radial-gradient(hsl(210, 90%, 54%) 8%, transparent 9%, transparent 100%);
-  }
-  9%
-  {
-    background: radial-gradient(hsl(210, 90%, 54%) 9%, transparent 10%, transparent 100%);
-  }
-  10%
-  {
-    background: radial-gradient(hsl(210, 90%, 54%) 10%, transparent 11%, transparent 100%);
-  }
-  11%
-  {
-    background: radial-gradient(hsl(210, 90%, 54%) 11%, transparent 12%, transparent 100%);
-  }
-  12%
-  {
-    background: radial-gradient(hsl(210, 90%, 54%) 12%, transparent 13%, transparent 100%);
-  }
-  13%
-  {
-    background: radial-gradient(hsl(210, 90%, 54%) 13%, transparent 14%, transparent 100%);
-  }
-  14%
-  {
-    background: radial-gradient(hsl(210, 90%, 54%) 14%, transparent 15%, transparent 100%);
-  }
-  15%
-  {
-    background: radial-gradient(hsl(210, 90%, 54%) 15%, transparent 16%, transparent 100%);
-  }
-  16%
-  {
-    background: radial-gradient(hsl(210, 90%, 54%) 16%, transparent 17%, transparent 100%);
-  }
-  17%
-  {
-    background: radial-gradient(hsl(210, 90%, 54%) 17%, transparent 18%, transparent 100%);
-  }
-  18%
-  {
-    background: radial-gradient(hsl(210, 90%, 54%) 18%, transparent 19%, transparent 100%);
-  }
-  19%
-  {
-    background: radial-gradient(hsl(210, 90%, 54%) 19%, transparent 20%, transparent 100%);
-  }
-  20%
-  {
-    background: radial-gradient(hsl(210, 90%, 54%) 20%, transparent 21%, transparent 100%);
-  }
-  21%
-  {
-    background: radial-gradient(hsl(210, 90%, 54%) 21%, transparent 22%, transparent 100%);
-  }
-  22%
-  {
-    background: radial-gradient(hsl(210, 90%, 54%) 22%, transparent 23%, transparent 100%);
-  }
-  23%
-  {
-    background: radial-gradient(hsl(210, 90%, 54%) 23%, transparent 24%, transparent 100%);
-  }
-  24%
-  {
-    background: radial-gradient(hsl(210, 90%, 54%) 24%, transparent 25%, transparent 100%);
-  }
-  25%
-  {
-    background: radial-gradient(hsl(210, 90%, 54%) 25%, transparent 26%, transparent 100%);
-  }
-  26%
-  {
-    background: radial-gradient(hsl(210, 90%, 54%) 26%, transparent 27%, transparent 100%);
-  }
-  27%
-  {
-    background: radial-gradient(hsl(210, 90%, 54%) 27%, transparent 28%, transparent 100%);
-  }
-  28%
-  {
-    background: radial-gradient(hsl(210, 90%, 54%) 28%, transparent 29%, transparent 100%);
-  }
-  29%
-  {
-    background: radial-gradient(hsl(210, 90%, 54%) 29%, transparent 30%, transparent 100%);
-  }
-  30%
-  {
-    background: radial-gradient(hsl(210, 90%, 54%) 30%, transparent 31%, transparent 100%);
-  }
-  31%
-  {
-    background: radial-gradient(hsl(210, 90%, 54%) 31%, transparent 32%, transparent 100%);
-  }
-  32%
-  {
-    background: radial-gradient(hsl(210, 90%, 54%) 32%, transparent 33%, transparent 100%);
-  }
-  33%
-  {
-    background: radial-gradient(hsl(210, 90%, 54%) 33%, transparent 34%, transparent 100%);
-  }
-  34%
-  {
-    background: radial-gradient(hsl(210, 90%, 54%) 34%, transparent 35%, transparent 100%);
-  }
-  35%
-  {
-    background: radial-gradient(hsl(210, 90%, 54%) 35%, transparent 36%, transparent 100%);
-  }
-  36%
-  {
-    background: radial-gradient(hsl(210, 90%, 54%) 36%, transparent 37%, transparent 100%);
-  }
-  37%
-  {
-    background: radial-gradient(hsl(210, 90%, 54%) 37%, transparent 38%, transparent 100%);
-  }
-  38%
-  {
-    background: radial-gradient(hsl(210, 90%, 54%) 38%, transparent 39%, transparent 100%);
-  }
-  39%
-  {
-    background: radial-gradient(hsl(210, 90%, 54%) 39%, transparent 40%, transparent 100%);
-  }
-  40%
-  {
-    background: radial-gradient(hsl(210, 90%, 54%) 40%, transparent 41%, transparent 100%);
-  }
-  41%
-  {
-    background: radial-gradient(hsl(210, 90%, 54%) 41%, transparent 42%, transparent 100%);
-  }
-  42%
-  {
-    background: radial-gradient(hsl(210, 90%, 54%) 42%, transparent 43%, transparent 100%);
-  }
-  43%
-  {
-    background: radial-gradient(hsl(210, 90%, 54%) 43%, transparent 44%, transparent 100%);
-  }
-  44%
-  {
-    background: radial-gradient(hsl(210, 90%, 54%) 44%, transparent 45%, transparent 100%);
-  }
-  45%
-  {
-    background: radial-gradient(hsl(210, 90%, 54%) 45%, transparent 46%, transparent 100%);
-  }
-  46%
-  {
-    background: radial-gradient(hsl(210, 90%, 54%) 46%, transparent 47%, transparent 100%);
-  }
-  47%
-  {
-    background: radial-gradient(hsl(210, 90%, 54%) 47%, transparent 48%, transparent 100%);
-  }
-  48%
-  {
-    background: radial-gradient(hsl(210, 90%, 54%) 48%, transparent 49%, transparent 100%);
-  }
-  49%
-  {
-    background: radial-gradient(hsl(210, 90%, 54%) 49%, transparent 50%, transparent 100%);
-  }
-  50%
-  {
-    background: radial-gradient(hsl(210, 90%, 54%) 50% transparent 51%, transparent 100%);
-  }
-  51%
-  {
-    background: radial-gradient(hsl(210, 90%, 54%) 51%, transparent 52%, transparent 100%);
-  }
-  52%
-  {
-    background: radial-gradient(hsl(210, 90%, 54%) 52%, transparent 53%, transparent 100%);
-  }
-  53%
-  {
-    background: radial-gradient(hsl(210, 90%, 54%) 53%, transparent 54%, transparent 100%);
-  }
-  54%
-  {
-    background: radial-gradient(hsl(210, 90%, 54%) 54%, transparent 55%, transparent 100%);
-  }
-  55%
-  {
-    background: radial-gradient(hsl(210, 90%, 54%) 55%, transparent 56%, transparent 100%);
-  }
-  56%
-  {
-    background: radial-gradient(hsl(210, 90%, 54%) 56%, transparent 57%, transparent 100%);
-  }
-  57%
-  {
-    background: radial-gradient(hsl(210, 90%, 54%) 57%, transparent 58%, transparent 100%);
-  }
-  58%
-  {
-    background: radial-gradient(hsl(210, 90%, 54%) 58%, transparent 59%, transparent 100%);
-  }
-  59%
-  {
-    background: radial-gradient(hsl(210, 90%, 54%) 59%, transparent 60%, transparent 100%);
-  }
-  60%
-  {
-    background: radial-gradient(hsl(210, 90%, 54%) 60%, transparent 61%, transparent 100%);
-  }
-  61%
-  {
-    background: radial-gradient(hsl(210, 90%, 54%) 61%, transparent 62%, transparent 100%);
-  }
-  62%
-  {
-    background: radial-gradient(hsl(210, 90%, 54%) 62%, transparent 63%, transparent 100%);
-  }
-  63%
-  {
-    background: radial-gradient(hsl(210, 90%, 54%) 63%, transparent 64%, transparent 100%);
-  }
-  64%
-  {
-    background: radial-gradient(hsl(210, 90%, 54%) 64%, transparent 65%, transparent 100%);
-  }
-  65%
-  {
-    background: radial-gradient(hsl(210, 90%, 54%) 65%, transparent 66%, transparent 100%);
-  }
-  66%
-  {
-    background: radial-gradient(hsl(210, 90%, 54%) 66%, transparent 67%, transparent 100%);
-  }
-  67%
-  {
-    background: radial-gradient(hsl(210, 90%, 54%) 67%, transparent 68%, transparent 100%);
-  }
-  68%
-  {
-    background: radial-gradient(hsl(210, 90%, 54%) 68%, transparent 69%, transparent 100%);
-  }
-  69%
-  {
-    background: radial-gradient(hsl(210, 90%, 54%) 69%, transparent 70%, transparent 100%);
-  }
-  70%
-  {
-    background: radial-gradient(hsl(210, 90%, 54%) 70%, transparent 71%, transparent 100%);
-  }
-  71%
-  {
-    background: radial-gradient(hsl(210, 90%, 54%) 71%, transparent 72%, transparent 100%);
-  }
-  72%
-  {
-    background: radial-gradient(hsl(210, 90%, 54%) 72%, transparent 73%, transparent 100%);
-  }
-  73%
-  {
-    background: radial-gradient(hsl(210, 90%, 54%) 73%, transparent 74%, transparent 100%);
-  }
-  74%
-  {
-    background: radial-gradient(hsl(210, 90%, 54%) 74%, transparent 75%, transparent 100%);
-  }
-  75%
-  {
-    background: radial-gradient(hsl(210, 90%, 54%) 75%, transparent 76%, transparent 100%);
-  }
-  76%
-  {
-    background: radial-gradient(hsl(210, 90%, 54%) 76%, transparent 77%, transparent 100%);
-  }
-  77%
-  {
-    background: radial-gradient(hsl(210, 90%, 54%) 77%, transparent 78%, transparent 100%);
-  }
-  78%
-  {
-    background: radial-gradient(hsl(210, 90%, 54%) 78%, transparent 79%, transparent 100%);
-  }
-  79%
-  {
-    background: radial-gradient(hsl(210, 90%, 54%) 79%, transparent 80%, transparent 100%);
-  }
-  80%
-  {
-    background: radial-gradient(hsl(210, 90%, 54%) 80%, transparent 81%, transparent 100%);
-  }
-  81%
-  {
-    background: radial-gradient(hsl(210, 90%, 54%) 81%, transparent 82%, transparent 100%);
-  }
-  82%
-  {
-    background: radial-gradient(hsl(210, 90%, 54%) 82%, transparent 83%, transparent 100%);
-  }
-  83%
-  {
-    background: radial-gradient(hsl(210, 90%, 54%) 83%, transparent 84%, transparent 100%);
-  }
-  84%
-  {
-    background: radial-gradient(hsl(210, 90%, 54%) 84%, transparent 85%, transparent 100%);
-  }
-  85%
-  {
-    background: radial-gradient(hsl(210, 90%, 54%) 85%, transparent 86%, transparent 100%);
-  }
-  86%
-  {
-    background: radial-gradient(hsl(210, 90%, 54%) 86%, transparent 87%, transparent 100%);
-  }
-  87%
-  {
-    background: radial-gradient(hsl(210, 90%, 54%) 87%, transparent 88%, transparent 100%);
-  }
-  88%
-  {
-    background: radial-gradient(hsl(210, 90%, 54%) 88%, transparent 2%, transparent 100%);
-  }
-  89%
-  {
-    background: radial-gradient(hsl(210, 90%, 54%) 89%, transparent 90%, transparent 100%);
-  }
-  90%
-  {
-    background: radial-gradient(hsl(210, 90%, 54%) 90%, transparent 91%, transparent 100%);
-  }
-  91%
-  {
-    background: radial-gradient(hsl(210, 90%, 54%) 91%, transparent 92%, transparent 100%);
-  }
-  92%
-  {
-    background: radial-gradient(hsl(210, 90%, 54%) 92% transparent 93%, transparent 100%);
-  }
-  93%
-  {
-    background: radial-gradient(hsl(210, 90%, 54%) 93%, transparent 94%, transparent 100%);
-  }
-  94%
-  {
-    background: radial-gradient(hsl(210, 90%, 54%) 94%, transparent 95%, transparent 100%);
-  }
-  95%
-  {
-    background: radial-gradient(hsl(210, 90%, 54%) 95%, transparent 96%, transparent 100%);
-  }
-  96%
-  {
-    background: radial-gradient(hsl(210, 90%, 54%) 96%, transparent 97%, transparent 100%);
-  }
-  97%
-  {
-    background: radial-gradient(hsl(210, 90%, 54%) 97%, transparent 98%, transparent 100%);
-  }
-  98%
-  {
-    background: radial-gradient(hsl(210, 90%, 54%) 98%, transparent 99%, transparent 100%);
-  }
-  99%
-  {
-    background: radial-gradient(hsl(210, 90%, 54%) 99%, transparent 100%);
+    box-shadow: none;
   }
   100%
   {
-    background: radial-gradient(hsl(210, 90%, 54%) 100%, transparent 0%);
+    box-shadow: 0 0 0.3rem hsl(210, 90%, 54%),
+    0 0 0.75rem hsl(210, 90%, 54%),
+    0 0 1rem hsl(210, 90%, 54%),
+    0 0 3rem hsl(210, 90%, 54%);
   }
 }
 
@@ -1498,21 +1047,9 @@ section{
 }
 
 #s3-timeline_circle_bot{
-  background-color: black;
   border: solid;
-  border-color: hsl(183, 100%, 50%);
-  border-width: 0.4em;
-  animation: blinkingbot 5s linear infinite;
-}
-
-@keyframes blinkingbot{
-  0% {box-shadow: none;}
-  50% {box-shadow: 0 0 0.1rem hsl(185, 98%, 48%), 
-    0 0 0.3rem hsl(195, 98%, 48%),
-    0 0 0.5rem hsl(195, 98%, 48%),
-    0 0 1rem hsl(195, 98%, 48%),
-    0 0 1.5rem hsl(195, 98%, 48%);}
-  100% {box-shadow: none;}
+  border-color: hsl(220, 98%, 48%);
+  border-width: 0.1em;
 }
 
 
@@ -1522,7 +1059,7 @@ section{
 
 .s4{
   flex-direction: column;
-  padding: 6.5rem 5rem;
+  padding: 7.5rem 7.5rem 7.5rem;
   font-size: 1rem;
   background-color: black;
 }
@@ -1536,6 +1073,7 @@ section{
 #s4-div_title{
 font-size: 6.5rem;
 line-height: 0.85em;
+padding: 0 0 5.5rem 0;
 outline: none;
 color: #fff;
 font-family: 'Quicksand', cursive;
@@ -1662,9 +1200,11 @@ text-shadow:
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 100%;
+  height: 100%;
 }
 
-.s5-team_img img{
+.s5-img{
   width: 100%;
   height: 100%;
 }
@@ -1731,6 +1271,7 @@ footer{
   justify-content: space-evenly;
   align-items: center;
   width: 10%;
+  -webkit-box-reflect: below -1.05rem linear-gradient(transparent 12%, rgba(0, 0, 0, 0.007) 20%, rgba(0, 0, 0, 0.05) 70%);
 }
 
 .foot-info_socials_img{
