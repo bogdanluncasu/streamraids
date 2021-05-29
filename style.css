@@ -1,6 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
 
 * {
   margin: 0;
@@ -56,10 +58,144 @@ section{
 }
 
 .body{
-  background: white;
+  background: black;
   background-repeat: no-repeat;
   overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
 }
+
+.divider{
+  width: 95%;
+  align-self: center;
+  background-color: white;
+  z-index: 100000;
+  height: 0.4rem;
+  border-radius: 2rem;
+  box-shadow:
+  inset 0 0 0.625rem currentColor,
+  inset 0 0 1.25rem currentColor,
+  0 0 0.1rem currentColor,
+  0 0 0.4rem currentColor,
+  0 0 0.6rem currentColor;
+}
+
+.about_brillitos{
+  color: hsl(300, 98%, 48%);
+  animation: about_parpadeo 4s linear;
+}
+
+.roadmap_brillitos{
+  color: hsl(190, 98%, 48%);
+  animation: roadmap_parpadeo 4s reverse;
+}
+
+.tokenomics_brillitos{
+  color: hsl(120, 98%, 55%);
+  animation: tokenomics_parpadeo 4s linear;
+}
+
+.theTeam_brillitos{
+  color: hsl(51, 100%, 55%);
+  animation: theTeam_parpadeo 4s reverse;
+}
+
+@keyframes about_parpadeo{
+  0%, 18%, 20%, 70%, 72%, 73%
+  {
+    color: black;
+    box-shadow:
+    inset 0 0 0.625rem currentColor,
+    inset 0 0 1.25rem currentColor,
+    0 0 0.1rem currentColor,
+    0 0 0.4rem currentColor,
+    0 0 0.6rem currentColor;
+
+  }
+  18.5%, 20.5%, 70.5%, 72.5%, 73.1%, 100%
+  {
+    color: hsl(300, 98%, 48%);
+    box-shadow:
+    inset 0 0 0.625rem currentColor,
+    inset 0 0 1.25rem currentColor,
+    0 0 0.1rem currentColor,
+    0 0 0.4rem currentColor,
+    0 0 0.6rem currentColor;
+  }
+}
+
+@keyframes roadmap_parpadeo{
+  0%, 18%, 20%, 70%, 72%, 73%
+  {
+    color: black;
+    box-shadow:
+    inset 0 0 0.625rem currentColor,
+    inset 0 0 1.25rem currentColor,
+    0 0 0.1rem currentColor,
+    0 0 0.4rem currentColor,
+    0 0 0.6rem currentColor;
+
+  }
+  18.5%, 20.5%, 70.5%, 72.5%, 73.1%, 100%
+  {
+    color: hsl(190, 98%, 48%);
+    box-shadow:
+    inset 0 0 0.625rem currentColor,
+    inset 0 0 1.25rem currentColor,
+    0 0 0.1rem currentColor,
+    0 0 0.4rem currentColor,
+    0 0 0.6rem currentColor;
+  }
+}
+
+@keyframes tokenomics_parpadeo{
+  0%, 18%, 20%, 70%, 72%, 73%
+  {
+    color: black;
+    box-shadow:
+    inset 0 0 0.625rem currentColor,
+    inset 0 0 1.25rem currentColor,
+    0 0 0.1rem currentColor,
+    0 0 0.4rem currentColor,
+    0 0 0.6rem currentColor;
+
+  }
+  18.5%, 20.5%, 70.5%, 72.5%, 73.1%, 100%
+  {
+    color: hsl(120, 98%, 55%);
+    box-shadow:
+    inset 0 0 0.625rem currentColor,
+    inset 0 0 1.25rem currentColor,
+    0 0 0.1rem currentColor,
+    0 0 0.4rem currentColor,
+    0 0 0.6rem currentColor;
+  }
+}
+
+@keyframes theTeam_parpadeo{
+  0%, 18%, 20%, 70%, 72%, 73%
+  {
+    color: black;
+    box-shadow:
+    inset 0 0 0.625rem currentColor,
+    inset 0 0 1.25rem currentColor,
+    0 0 0.1rem currentColor,
+    0 0 0.4rem currentColor,
+    0 0 0.6rem currentColor;
+
+  }
+  18.5%, 20.5%, 70.5%, 72.5%, 73.1%, 100%
+  {
+    color: hsl(51, 100%, 55%);
+    box-shadow:
+    inset 0 0 0.625rem currentColor,
+    inset 0 0 1.25rem currentColor,
+    0 0 0.1rem currentColor,
+    0 0 0.4rem currentColor,
+    0 0 0.6rem currentColor;
+  }
+}
+
 
 /* START ---------------------------------------------------------------- */
 
@@ -182,7 +318,7 @@ section{
 }
 
 #Nav_home:hover{
-  color: hsl(270, 98%, 48%);
+  color: hsl(280, 98%, 48%);
 }
 #Nav_about:hover{
   color: hsl(300, 98%, 48%);
@@ -194,7 +330,7 @@ section{
   color: hsl(120, 98%, 55%);
 }
 #Nav_theTeam:hover{
-  color: hsl(70, 98%, 48%);
+  color: hsl(51, 100%, 55%);
 }
 
 
@@ -446,6 +582,7 @@ section{
   left: 0; */
   height: 100vh;
   width: 100vw;
+  padding: 0;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -498,10 +635,32 @@ section{
   animation-delay: 9s;
 }
 #s1_blink_3{
-  animation-delay: 10s;
+  animation-delay: 13s;
 }
 #s1_blink_4{
-  animation-delay: 13s;
+  animation-delay: 10s;
+}
+
+@keyframes animate2{
+  0%, 18%, 20%, 70%, 72%, 73%
+  {
+    color: hsl(0, 0%, 17%);
+    text-shadow: 0 0 0.625rem hsla(275, 65%, 16%, 0.35), 
+    0 0 1.25rem hsla(275, 65%, 16%, 0.35),
+    0 0 2.5rem hsla(275, 65%, 16%, 0.35),
+    0 0 5rem hsla(275, 65%, 16%, 0.35),
+    0 0 10rem hsla(275, 65%, 16%, 0.35);
+
+  }
+  18.5%, 20.5%, 70.5%, 72.5%, 73.1%, 100%
+  {
+    color: hsl(0, 0%, 100%);
+    text-shadow: 0 0 0.625rem hsl(287, 98%, 48%), 
+    0 0 1.25rem hsl(287, 98%, 48%),
+    0 0 2.5rem hsl(287, 98%, 48%),
+    0 0 5rem hsl(287, 98%, 48%),
+    0 0 10rem hsl(287, 98%, 48%);
+  }
 }
 
 @keyframes animate{
@@ -640,7 +799,7 @@ section{
 
 .s2{
   flex-direction: column;
-  padding: 2rem;
+  padding: 6rem 2rem;
   font-size: 1rem;
   background-color: black;
 }
@@ -682,6 +841,22 @@ section{
   display: flex;
   flex-direction: column;
   margin-bottom: 2em;
+  animation: appear 2s;
+}
+
+@keyframes appear{
+  0%{
+    opacity: 0;
+    transform: translateX(-6rem);
+  }
+  60%{
+    opacity: 1;
+    transform: translateX(20px);
+  }
+  100%{
+    opacity: 1;
+    transform: translateX(0px);
+  }
 }
 
 #s2-mid{
@@ -692,21 +867,24 @@ section{
 }
 
 .s2-description_title{
-  font-size: 4em;
-  margin-bottom: 0.5em;
+  font-size: 5em;
   line-height: 0.85em;
   outline: none;
   color: #fff;
-  text-shadow: 0 0 0.625rem hsl(300, 98%, 48%), 
-    0 0 1.25rem hsl(320, 98%, 48%),
-    0 0 2.5rem hsl(320, 98%, 48%),
-    0 0 5rem hsl(320, 98%, 48%),
-    0 0 10rem hsl(320, 98%, 48%);
+  font-family: 'Quicksand', cursive;
+  font-weight: 100;
+  text-shadow:
+    0 0 0.3125rem hsl(0, 0%, 90%), 
+    0 0 0.625rem hsl(320, 98%, 70%), 
+    0 0 1.25rem hsl(320, 98%, 60%),
+    0 0 2rem hsl(320, 98%, 50%),
+    0 0 2.5rem hsl(320, 98%, 40%),
+    0 0 4rem hsl(320, 100%, 30%);
 }
 
 .s2-description_text{
   font-size: 1.2em;
-  margin-top: 0.5em;
+  margin-top: 1.5em;
   text-align: justify;
   color: white;
 }
@@ -733,7 +911,7 @@ section{
 .s3{
   flex-direction: column;
   align-items: center;
-  padding: 5rem 5rem;
+  padding: 6.5rem 5rem;
   background-color: black;
 }
 
@@ -742,7 +920,7 @@ section{
 }
 
 #s3-div_title{
-  display: flex;
+  /* display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -754,7 +932,24 @@ section{
     0 0 1.25rem hsl(210, 98%, 48%),
     0 0 2.5rem hsl(210, 98%, 48%),
     0 0 5rem hsl(210, 98%, 48%),
-    0 0 10rem hsl(210, 98%, 48%);
+    0 0 10rem hsl(210, 98%, 48%); */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 5em;
+  line-height: 0.85em;
+  outline: none;
+  color: #fff;
+  font-family: 'Quicksand', cursive;
+  font-weight: 100;
+  text-shadow:
+    0 0 0.3125rem hsl(0, 0%, 90%), 
+    0 0 0.625rem hsl(205, 98%, 70%), 
+    0 0 1.25rem hsl(205, 98%, 60%),
+    0 0 2rem hsl(205, 98%, 50%),
+    0 0 2.5rem hsl(205, 98%, 40%),
+    0 0 4rem hsl(205, 100%, 30%);
 }
 
 #s3-div_timeline{
@@ -846,7 +1041,7 @@ section{
 
 .s4{
   flex-direction: column;
-  padding: 5rem 5rem;
+  padding: 6.5rem 5rem;
   font-size: 1rem;
   background-color: black;
 }
@@ -858,22 +1053,32 @@ section{
 }
 
 #s4-div_title{
-  font-size: 5em;
-  line-height: 0.85em;
-  outline: none;
-  color: #fff;
-  text-shadow: 0 0 0.625rem hsl(120, 98%, 48%), 
-    0 0 1.25rem hsl(140, 98%, 48%),
-    0 0 2.5rem hsl(140, 98%, 48%),
-    0 0 5rem hsl(140, 98%, 48%),
-    0 0 10rem hsl(140, 98%, 48%);
+font-size: 5em;
+line-height: 0.85em;
+outline: none;
+color: #fff;
+font-family: 'Quicksand', cursive;
+font-weight: 100;
+text-shadow:
+  0 0 0.3125rem hsl(0, 0%, 90%), 
+  0 0 0.625rem hsl(120, 98%, 70%), 
+  0 0 1.25rem hsl(120, 98%, 60%),
+  0 0 2rem hsl(120, 98%, 50%),
+  0 0 2.5rem hsl(120, 98%, 40%),
+  0 0 4rem hsl(120, 100%, 30%);
 }
 
 #s4-div_description{
   flex-direction: row;
 }
 
-#s4-div_info{
+#s4-div_info_left{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+#s4-div_info_right{
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -926,7 +1131,7 @@ section{
 
 .s5{
   flex-direction: column;
-  padding: 5rem 5rem;
+  padding: 6.5rem 5rem;
   font-size: 1rem;
   margin: 0;
   background-color: black;
@@ -939,15 +1144,19 @@ section{
 }
 
 #s5-div_title{
-  font-size: 5em;
-  line-height: 0.85em;
-  outline: none;
-  color: #fff;
-  text-shadow: 0 0 0.625rem hsl(70, 98%, 48%), 
-    0 0 1.25rem hsl(80, 98%, 48%),
-    0 0 2.5rem hsl(80, 98%, 48%),
-    0 0 5rem hsl(80, 98%, 48%),
-    0 0 10rem hsl(80, 98%, 48%);
+font-size: 5em;
+line-height: 0.85em;
+outline: none;
+color: #fff;
+font-family: 'Quicksand', cursive;
+font-weight: 100;
+text-shadow:
+  0 0 0.3125rem hsl(0, 0%, 90%), 
+  0 0 0.625rem hsl(51, 98%, 70%), 
+  0 0 1.25rem hsl(51, 98%, 60%),
+  0 0 2rem hsl(51, 98%, 50%),
+  0 0 2.5rem hsl(51, 98%, 40%),
+  0 0 4rem hsl(51, 100%, 30%);
 }
 
 #s5-div_content{
@@ -961,17 +1170,18 @@ section{
   justify-content: center;
   align-items: center;
   margin: 0 4em;
+  box-shadow: 0 0 0.05rem hsl(0, 0%, 90%), 
+  0 0 0.15rem hsl(51, 98%, 70%), 
+  0 0 0.25rem hsl(51, 98%, 60%),
+  0 0 0.5rem hsl(51, 98%, 50%),
+  0 0 0.75rem hsl(51, 98%, 40%),
+  0 0 1rem hsl(51, 100%, 30%);
 }
 
 .s5-team_img{
   display: flex;
   justify-content: center;
   align-items: center;
-  box-shadow: 0 0 0.05rem hsl(70, 98%, 48%), 
-    0 0 0.15rem hsl(80, 98%, 48%),
-    0 0 0.25rem hsl(80, 98%, 48%),
-    0 0 0.5rem hsl(80, 98%, 48%),
-    0 0 0.75rem hsl(80, 98%, 48%);
 }
 
 .s5-team_img img{
@@ -1015,6 +1225,7 @@ footer{
   display: flex;  
   flex-direction: column;
   background-color: rgb(103, 103, 103);
+  padding: 2rem 0;
 }
 
 .foot-div{
@@ -1024,6 +1235,7 @@ footer{
   align-items: center;
   text-align: center;
   color: white;
+  padding: 1rem 0;
 }
 
 .foot-info_socials{
@@ -1107,8 +1319,6 @@ footer{
 }
 
 /* ------------------------------------------ */
-
-
 
 
 

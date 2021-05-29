@@ -74,6 +74,28 @@ document.querySelector('.toggle').onclick = function(){
 
 // ------------------------------------------------------------------------------
 
+const barras = document.querySelectorAll('.divider');
+const about = barras[0];
+const roadmap = barras[1];
+const tokenomics = barras[2];
+const theTeam = barras[3];
+
+
+function onVisible(element, callback) {
+  new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if(entry.intersectionRatio > 0) {
+        callback(element);
+        observer.disconnect();
+      }
+    });
+  }).observe(element);
+}
+
+onVisible(about, ()=> about.classList.add('about_brillitos'));
+onVisible(roadmap, ()=> roadmap.classList.add('roadmap_brillitos'));
+onVisible(tokenomics, ()=> tokenomics.classList.add('tokenomics_brillitos'));
+onVisible(theTeam, ()=> theTeam.classList.add('theTeam_brillitos'));
 
 
 
