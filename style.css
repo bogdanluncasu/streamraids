@@ -673,38 +673,39 @@ section{
 
 #s2-div_description{
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: center;
+  align-items: center;
   padding: 4em 8em;
 }
 
 #s2-top{
   display: flex;
   flex-direction: column;
-  margin-bottom: 4em;
+  margin-bottom: 2em;
 }
 
 #s2-mid{
   display: flex;
   flex-direction: row;
-  margin-top: 4em;
+  align-items: center;
+  margin-top: 2em;
 }
 
 .s2-description_title{
-  font-size: 5em;
+  font-size: 4em;
   margin-bottom: 0.5em;
-  /* -webkit-box-reflect: below 0.001em linear-gradient(transparent, hsla(287, 0%, 0%, 0.267)); */
   line-height: 0.85em;
   outline: none;
   color: #fff;
-  text-shadow: 0 0 0.625rem hsl(303, 98%, 48%), 
-    0 0 1.25rem hsl(323, 98%, 48%),
-    0 0 2.5rem hsl(323, 98%, 48%),
-    0 0 5rem hsl(323, 98%, 48%),
-    0 0 10rem hsl(323, 98%, 48%);
+  text-shadow: 0 0 0.625rem hsl(300, 98%, 48%), 
+    0 0 1.25rem hsl(320, 98%, 48%),
+    0 0 2.5rem hsl(320, 98%, 48%),
+    0 0 5rem hsl(320, 98%, 48%),
+    0 0 10rem hsl(320, 98%, 48%);
 }
 
 .s2-description_text{
-  font-size: 1.5em;
+  font-size: 1.2em;
   margin-top: 0.5em;
   text-align: justify;
   color: white;
@@ -732,7 +733,7 @@ section{
 .s3{
   flex-direction: column;
   align-items: center;
-  padding: 2rem 6rem;
+  padding: 5rem 5rem;
   background-color: black;
 }
 
@@ -749,11 +750,11 @@ section{
   line-height: 0.85em;
   outline: none;
   color: #fff;
-  text-shadow: 0 0 0.625rem hsl(237, 98%, 48%), 
-    0 0 1.25rem hsl(257, 98%, 48%),
-    0 0 2.5rem hsl(257, 98%, 48%),
-    0 0 5rem hsl(257, 98%, 48%),
-    0 0 10rem hsl(257, 98%, 48%);
+  text-shadow: 0 0 0.625rem hsl(190, 98%, 48%), 
+    0 0 1.25rem hsl(210, 98%, 48%),
+    0 0 2.5rem hsl(210, 98%, 48%),
+    0 0 5rem hsl(210, 98%, 48%),
+    0 0 10rem hsl(210, 98%, 48%);
 }
 
 #s3-div_timeline{
@@ -786,11 +787,11 @@ section{
   border: solid;
   border-color: hsl(227, 100%, 50%);
   border-width: 0.4em;
-  box-shadow: 0 0 0.625rem hsl(230, 98%, 48%), 
-  0 0 1.25rem hsl(250, 98%, 48%),
-  0 0 2.5rem hsl(250, 98%, 48%),
-  0 0 5rem hsl(250, 98%, 48%),
-  0 0 10rem hsl(250, 98%, 48%);
+  box-shadow: 0 0 0.1rem hsl(230, 98%, 48%), 
+  0 0 0.3rem hsl(250, 98%, 48%),
+  0 0 0.5rem hsl(250, 98%, 48%),
+  0 0 1rem hsl(250, 98%, 48%),
+  0 0 1.5rem hsl(250, 98%, 48%);
 }
 
 
@@ -845,7 +846,7 @@ section{
 
 .s4{
   flex-direction: column;
-  padding: 2rem;
+  padding: 5rem 5rem;
   font-size: 1rem;
   background-color: black;
 }
@@ -861,11 +862,11 @@ section{
   line-height: 0.85em;
   outline: none;
   color: #fff;
-  text-shadow: 0 0 0.625rem hsl(270, 98%, 48%), 
-    0 0 1.25rem hsl(287, 98%, 48%),
-    0 0 2.5rem hsl(287, 98%, 48%),
-    0 0 5rem hsl(287, 98%, 48%),
-    0 0 10rem hsl(287, 98%, 48%);
+  text-shadow: 0 0 0.625rem hsl(120, 98%, 48%), 
+    0 0 1.25rem hsl(140, 98%, 48%),
+    0 0 2.5rem hsl(140, 98%, 48%),
+    0 0 5rem hsl(140, 98%, 48%),
+    0 0 10rem hsl(140, 98%, 48%);
 }
 
 #s4-div_description{
@@ -891,7 +892,7 @@ section{
 
 .s4-info_number{
   font-size: 1.4em;
-  color: var(--main-color);
+  color: hsl(120, 98%, 48%);
   font-weight: bold;
 }
 
@@ -913,7 +914,7 @@ section{
 }
 
 .s4-info_fee_number p {
-  color: var(--main-color);
+  color: hsl(120, 98%, 48%);
   font-weight: bold;
   margin-right: 0.7em;
 }
@@ -925,7 +926,7 @@ section{
 
 .s5{
   flex-direction: column;
-  padding: 2rem 5rem;
+  padding: 5rem 5rem;
   font-size: 1rem;
   margin: 0;
   background-color: black;
@@ -942,15 +943,16 @@ section{
   line-height: 0.85em;
   outline: none;
   color: #fff;
-  text-shadow: 0 0 0.625rem hsl(270, 98%, 48%), 
-    0 0 1.25rem hsl(287, 98%, 48%),
-    0 0 2.5rem hsl(287, 98%, 48%),
-    0 0 5rem hsl(287, 98%, 48%),
-    0 0 10rem hsl(287, 98%, 48%);
+  text-shadow: 0 0 0.625rem hsl(70, 98%, 48%), 
+    0 0 1.25rem hsl(80, 98%, 48%),
+    0 0 2.5rem hsl(80, 98%, 48%),
+    0 0 5rem hsl(80, 98%, 48%),
+    0 0 10rem hsl(80, 98%, 48%);
 }
 
 #s5-div_content{
   flex-direction: row;
+  padding: 5em 0 0 0;
 }
 
 .s5-team_item{
@@ -965,6 +967,16 @@ section{
   display: flex;
   justify-content: center;
   align-items: center;
+  box-shadow: 0 0 0.05rem hsl(70, 98%, 48%), 
+    0 0 0.15rem hsl(80, 98%, 48%),
+    0 0 0.25rem hsl(80, 98%, 48%),
+    0 0 0.5rem hsl(80, 98%, 48%),
+    0 0 0.75rem hsl(80, 98%, 48%);
+}
+
+.s5-team_img img{
+  width: 100%;
+  height: 100%;
 }
 
 .s5-team_description{
@@ -973,6 +985,26 @@ section{
   align-items: center;  
   text-align: center;
   color: white;
+  padding: 0.4em 0;
+}
+
+.s5-team_socials{
+  display: flex;
+  justify-content: center;
+}
+
+.s5-team_socials_img{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 15%;
+  padding: 0.4em 0.2em;
+}
+
+.s5-team_socials_img img{
+  width: 100%;
+  height: 100%;
 }
 
 /* Footer ----------------------------------------------------------*/
