@@ -74,12 +74,6 @@ document.querySelector('.toggle').onclick = function(){
 
 // ------------------------------------------------------------------------------
 
-const barras = document.querySelectorAll('.divider');
-const about = barras[0];
-const roadmap = barras[1];
-const tokenomics = barras[2];
-const theTeam = barras[3];
-
 
 function onVisible(element, callback) {
   new IntersectionObserver((entries, observer) => {
@@ -92,14 +86,37 @@ function onVisible(element, callback) {
   }).observe(element);
 }
 
-onVisible(about, ()=> about.classList.add('about_brillitos'));
-onVisible(roadmap, ()=> roadmap.classList.add('roadmap_brillitos'));
-onVisible(tokenomics, ()=> tokenomics.classList.add('tokenomics_brillitos'));
-onVisible(theTeam, ()=> theTeam.classList.add('theTeam_brillitos'));
+// divider -----------------------------------------------------------------------------
+const divider = document.querySelectorAll('.divider');
+const about = divider[0];
+const roadmap = divider[1];
+const tokenomics = divider[2];
+const theTeam = divider[3];
+
+onVisible(about, ()=> about.classList.add('about_neon'));
+onVisible(roadmap, ()=> roadmap.classList.add('roadmap_neon'));
+onVisible(tokenomics, ()=> tokenomics.classList.add('tokenomics_neon'));
+onVisible(theTeam, ()=> theTeam.classList.add('theTeam_neon'));
+// divider -----------------------------------------------------------------------------
 
 
+// s2 -----------------------------------------------------------------------------
+const s2_top = document.querySelector('#s2-top')
+const s2_description_mid = document.querySelector('#s2-description_mid')
+const s2_img = document.querySelector('.s2-img')
 
+onVisible(s2_top, ()=> s2_top.classList.add('appear_left'));
+onVisible(s2_description_mid, ()=> s2_description_mid.classList.add('appear_right'));
+onVisible(s2_img, ()=> s2_img.classList.add('appear_left'));
+// s2 -----------------------------------------------------------------------------
 
+// roadmap_ball -----------------------------------------------------------------------------
+
+const roadmap_ball_top = document.getElementById('s3-timeline_circle_top');
+const roadmap_ball_mid = document.getElementById('s3-timeline_circle_mid');
+
+onVisible(roadmap_ball_top, ()=> roadmap_ball_top.classList.add('fullfill_top'));
+onVisible(roadmap_ball_mid, ()=> roadmap_ball_mid.classList.add('fullfill_mid'));
 
 
 

@@ -66,7 +66,7 @@ section{
 }
 
 .divider{
-  width: 95%;
+  width: 92.5%;
   align-self: center;
   background-color: white;
   z-index: 100000;
@@ -80,27 +80,28 @@ section{
   0 0 0.6rem currentColor;
 }
 
-.about_brillitos{
+.about_neon{
   color: hsl(300, 98%, 48%);
-  animation: about_parpadeo 4s linear;
+  /* animation: about_blinking 4s linear; */
+  animation: about_blinking 1s reverse;
 }
 
-.roadmap_brillitos{
+.roadmap_neon{
   color: hsl(190, 98%, 48%);
-  animation: roadmap_parpadeo 4s reverse;
+  animation: roadmap_blinking 4s reverse;
 }
 
-.tokenomics_brillitos{
+.tokenomics_neon{
   color: hsl(120, 98%, 55%);
-  animation: tokenomics_parpadeo 4s linear;
+  animation: tokenomics_blinking 4s linear;
 }
 
-.theTeam_brillitos{
+.theTeam_neon{
   color: hsl(51, 100%, 55%);
-  animation: theTeam_parpadeo 4s reverse;
+  animation: theTeam_blinking 4s reverse;
 }
 
-@keyframes about_parpadeo{
+/* @keyframes about_blinking{
   0%, 18%, 20%, 70%, 72%, 73%
   {
     color: black;
@@ -122,9 +123,33 @@ section{
     0 0 0.4rem currentColor,
     0 0 0.6rem currentColor;
   }
+} */
+
+@keyframes about_blinking{
+  0%, 60%, 70%
+  {
+    color: black;
+    box-shadow:
+    inset 0 0 0.625rem currentColor,
+    inset 0 0 1.25rem currentColor,
+    0 0 0.1rem currentColor,
+    0 0 0.4rem currentColor,
+    0 0 0.6rem currentColor;
+
+  }
+  40%, 65%, 100%
+  {
+    color: hsl(300, 98%, 48%);
+    box-shadow:
+    inset 0 0 0.625rem currentColor,
+    inset 0 0 1.25rem currentColor,
+    0 0 0.1rem currentColor,
+    0 0 0.4rem currentColor,
+    0 0 0.6rem currentColor;
+  }
 }
 
-@keyframes roadmap_parpadeo{
+@keyframes roadmap_blinking{
   0%, 18%, 20%, 70%, 72%, 73%
   {
     color: black;
@@ -148,7 +173,7 @@ section{
   }
 }
 
-@keyframes tokenomics_parpadeo{
+@keyframes tokenomics_blinking{
   0%, 18%, 20%, 70%, 72%, 73%
   {
     color: black;
@@ -172,7 +197,7 @@ section{
   }
 }
 
-@keyframes theTeam_parpadeo{
+@keyframes theTeam_blinking{
   0%, 18%, 20%, 70%, 72%, 73%
   {
     color: black;
@@ -193,6 +218,44 @@ section{
     0 0 0.1rem currentColor,
     0 0 0.4rem currentColor,
     0 0 0.6rem currentColor;
+  }
+}
+
+.appear_left{
+  animation: appear_left 2s;
+}
+
+@keyframes appear_left{
+  0%{
+    opacity: 0;
+    transform: translateX(-10rem);
+  }
+  60%{
+    opacity: 1;
+    transform: translateX(0.1em);
+  }
+  100%{
+    opacity: 1;
+    transform: translateX(0em);
+  }
+}
+
+.appear_right{
+  animation: appear_right 2s;
+}
+
+@keyframes appear_right{
+  0%{
+    opacity: 0;
+    transform: translateX(6rem);
+  }
+  60%{
+    opacity: 1;
+    transform: translateX(-0.1em);
+  }
+  100%{
+    opacity: 1;
+    transform: translateX(0em);
   }
 }
 
@@ -276,7 +339,7 @@ section{
   top: 0;
   left: 0;
   width: 100vw;
-  height: 5rem;
+  height: 3.75rem;
   font-size: 1rem;
   padding: 1% 3%;
   display: flex;
@@ -290,12 +353,12 @@ section{
   z-index: 1000;
   width: 70%;
   height: 100%;
-  padding: 0em 1em;
+  padding: 0em 0.75em;
   display: flex;
   align-items: center;
   justify-content: space-around;
-  font-size: 1.5rem;
-  letter-spacing: 0.1em;
+  font-size: 1.125rem;
+  letter-spacing: 0.075em;
 }
 
 .nav_bar a{
@@ -306,9 +369,9 @@ section{
   transition: 0.5s linear;
   cursor: pointer;
   transform: scale(1);
-  border: currentColor 0.125em solid;
-  padding: 0.25em 1em;
-  border-radius: 2em;
+  border: currentColor 0.1em solid;
+  padding: 0.17em 0.75em;
+  border-radius: 1.5em;
   text-shadow: 
     0 0 0.125em hsla(0, 0%, 100%, 0.3),
     0 0 0.45em currentColor;
@@ -342,9 +405,9 @@ section{
   top: 96.2%;
   left: 98.3%;
   transform: translate(-98.3%, -96.2%);
-  width: 4rem;
-  height: 4rem;
-  border-radius: 4rem;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 3rem;
   transition: 0.5s;
   z-index: 100000;
   overflow: hidden;
@@ -363,8 +426,8 @@ section{
 }
 
 .side_bar.active{
-  width: 4rem;
-  height: 20rem;
+  width: 3rem;
+  height: 17rem;
   border-radius: 3rem;
   transition: width 0.25s, height 1.25s ease-out;
   transition-delay: 0s, 0s;
@@ -385,7 +448,7 @@ section{
   top: 0;
   left: 0;
   width: 100%;
-  height: 4rem;
+  height: 3rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -428,8 +491,8 @@ section{
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 4rem;
-  height: 4rem;
+  width: 3rem;
+  height: 3rem;
   font-weight: 400;
   transition: 2s;
   transform: rotate(-360deg);
@@ -606,7 +669,7 @@ section{
 .s1-text_titleName{
   position: relative;
   font-family:'Josefin Sans', sans-serif;
-  font-size: 10em;
+  font-size: 7rem;
   font-weight: 100;
   letter-spacing: 0.05em;
   width: 100%;
@@ -720,7 +783,7 @@ section{
   text-transform: uppercase;
   letter-spacing: 0.25rem;
   text-decoration: none;
-  font-size: 1.5rem;
+  font-size: 1.125rem;
   overflow: hidden;
   transition: 0.2s;
 }
@@ -841,23 +904,8 @@ section{
   display: flex;
   flex-direction: column;
   margin-bottom: 2em;
-  animation: appear 2s;
 }
 
-@keyframes appear{
-  0%{
-    opacity: 0;
-    transform: translateX(-6rem);
-  }
-  60%{
-    opacity: 1;
-    transform: translateX(20px);
-  }
-  100%{
-    opacity: 1;
-    transform: translateX(0px);
-  }
-}
 
 #s2-mid{
   display: flex;
@@ -867,7 +915,7 @@ section{
 }
 
 .s2-description_title{
-  font-size: 5em;
+  font-size: 5rem;
   line-height: 0.85em;
   outline: none;
   color: #fff;
@@ -895,7 +943,7 @@ section{
   width: 60%;
 }
 
-.s2-description_img{
+.s2-img{
   display: flex;
   justify-content: center;
   align-items: center;
@@ -911,33 +959,23 @@ section{
 .s3{
   flex-direction: column;
   align-items: center;
-  padding: 6.5rem 5rem;
-  background-color: black;
+  padding: 7.5rem 11rem 7.5rem;
+  background-color: hsl(0, 0%, 0%);
 }
 
 .s3-div_Roadmap{
   width: 100%;
+  display: flex;
+  flex-direction: column;
+
 }
 
 #s3-div_title{
-  /* display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  font-size: 5em;
-  line-height: 0.85em;
-  outline: none;
-  color: #fff;
-  text-shadow: 0 0 0.625rem hsl(190, 98%, 48%), 
-    0 0 1.25rem hsl(210, 98%, 48%),
-    0 0 2.5rem hsl(210, 98%, 48%),
-    0 0 5rem hsl(210, 98%, 48%),
-    0 0 10rem hsl(210, 98%, 48%); */
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
-  font-size: 5em;
+  padding: 0 0 5.5rem 0;
+  font-size: 6.5rem;
   line-height: 0.85em;
   outline: none;
   color: #fff;
@@ -952,65 +990,514 @@ section{
     0 0 4rem hsl(205, 100%, 30%);
 }
 
-#s3-div_timeline{
-  padding: 2em 0;
-}
-
 .s3-timeline_container{
-  padding: 1em 0;
   display: flex;
-  flex-direction: row;
   align-items: center;
-  position: relative;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0 0 1.5rem 0;
 }
 
-.s3-timeline_circle{
-  border-radius: 100%;
-  height: 3em;
-  width: 3em;
+.s3-spacing{
+  width: 40%;
+  height: 100%;
 }
 
 .s3-timeline_item{
-  display: inline-block;
-  width: 45%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 40%;
+  height: 100%;
   color: white;
 }
 
-#s3-timeline_circle_top{
-  margin-left: 5%;
-  background-color: rgb(0, 55, 255);
-  border: solid;
-  border-color: hsl(227, 100%, 50%);
-  border-width: 0.4em;
-  box-shadow: 0 0 0.1rem hsl(230, 98%, 48%), 
-  0 0 0.3rem hsl(250, 98%, 48%),
-  0 0 0.5rem hsl(250, 98%, 48%),
-  0 0 1rem hsl(250, 98%, 48%),
-  0 0 1.5rem hsl(250, 98%, 48%);
+
+.s3-timeline_item_title{
+  font-size: 3em;
+  font-weight: 300;
+  padding: 0 0 0.75rem 0;
+  line-height: 1em;
+  width: 22.5rem;
+  text-shadow:
+    0 0 0.1rem hsl(0, 0%, 90%), 
+    0 0 0.25rem hsl(0, 0%, 90%);
 }
 
+.s3-timeline_item_text{
+  font-size: 1.2rem;
+  font-weight: 100;
+  list-style: none;
+  width: 22.5rem;
+}
+
+.s3-timeline_circle-div{
+  z-index: 10000;
+  width: 10%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.s3-timeline_circle{
+  width: 3rem;
+  height: 3rem;
+  border-radius: 3rem;
+}
+
+#s3-timeline_circle_top{
+  box-shadow: 0 0 0.3rem hsl(210, 90%, 54%),
+  0 0 0.75rem hsl(210, 90%, 54%),
+  0 0 1rem hsl(210, 90%, 54%),
+  0 0 3rem hsl(210, 90%, 54%);
+}
 
 #s3-timeline_circle_mid{
-  margin-left: 50%;
-  background-color: black;
   border: solid;
-  border-color: hsl(198, 100%, 50%);
-  border-width: 0.4em;
-  animation: blinkingmid 5s linear infinite;
+  border-color: hsl(210, 90%, 54%);
+  border-width: 0.1em;
 }
 
-@keyframes blinkingmid{
-  0% {box-shadow: none;}
-  50% {box-shadow: 0 0 0.1rem hsl(200, 98%, 48%), 
-    0 0 0.3rem hsl(220, 98%, 48%),
-    0 0 0.5rem hsl(220, 98%, 48%),
+.fullfill_top{
+  background: hsl(210, 90%, 54%);
+  animation: filling 3s linear;
+  animation-delay: 0s;
+}
+
+.fullfill_mid{
+  animation: blinking_mid 5s linear infinite;
+  animation-delay: 0s;
+}
+
+@keyframes filling{
+  0%
+  {
+    background: radial-gradient(hsl(210, 90%, 54%) 0%, transparent 2%, transparent 100%);
+  }
+  1%
+  {
+    background: radial-gradient(hsl(210, 90%, 54%) 1%, transparent 2%, transparent 100%);
+  }
+  2%
+  {
+    background: radial-gradient(hsl(210, 90%, 54%) 2%, transparent 3%, transparent 100%);
+  }
+  3%
+  {
+    background: radial-gradient(hsl(210, 90%, 54%) 3%, transparent 4%, transparent 100%);
+  }
+  4%
+  {
+    background: radial-gradient(hsl(210, 90%, 54%) 4%, transparent 5%, transparent 100%);
+  }
+  5%
+  {
+    background: radial-gradient(hsl(210, 90%, 54%) 5%, transparent 6%, transparent 100%);
+  }
+  6%
+  {
+    background: radial-gradient(hsl(210, 90%, 54%) 6%, transparent 7%, transparent 100%);
+  }
+  7%
+  {
+    background: radial-gradient(hsl(210, 90%, 54%) 7%, transparent 8%, transparent 100%);
+  }
+  8%
+  {
+    background: radial-gradient(hsl(210, 90%, 54%) 8%, transparent 9%, transparent 100%);
+  }
+  9%
+  {
+    background: radial-gradient(hsl(210, 90%, 54%) 9%, transparent 10%, transparent 100%);
+  }
+  10%
+  {
+    background: radial-gradient(hsl(210, 90%, 54%) 10%, transparent 11%, transparent 100%);
+  }
+  11%
+  {
+    background: radial-gradient(hsl(210, 90%, 54%) 11%, transparent 12%, transparent 100%);
+  }
+  12%
+  {
+    background: radial-gradient(hsl(210, 90%, 54%) 12%, transparent 13%, transparent 100%);
+  }
+  13%
+  {
+    background: radial-gradient(hsl(210, 90%, 54%) 13%, transparent 14%, transparent 100%);
+  }
+  14%
+  {
+    background: radial-gradient(hsl(210, 90%, 54%) 14%, transparent 15%, transparent 100%);
+  }
+  15%
+  {
+    background: radial-gradient(hsl(210, 90%, 54%) 15%, transparent 16%, transparent 100%);
+  }
+  16%
+  {
+    background: radial-gradient(hsl(210, 90%, 54%) 16%, transparent 17%, transparent 100%);
+  }
+  17%
+  {
+    background: radial-gradient(hsl(210, 90%, 54%) 17%, transparent 18%, transparent 100%);
+  }
+  18%
+  {
+    background: radial-gradient(hsl(210, 90%, 54%) 18%, transparent 19%, transparent 100%);
+  }
+  19%
+  {
+    background: radial-gradient(hsl(210, 90%, 54%) 19%, transparent 20%, transparent 100%);
+  }
+  20%
+  {
+    background: radial-gradient(hsl(210, 90%, 54%) 20%, transparent 21%, transparent 100%);
+  }
+  21%
+  {
+    background: radial-gradient(hsl(210, 90%, 54%) 21%, transparent 22%, transparent 100%);
+  }
+  22%
+  {
+    background: radial-gradient(hsl(210, 90%, 54%) 22%, transparent 23%, transparent 100%);
+  }
+  23%
+  {
+    background: radial-gradient(hsl(210, 90%, 54%) 23%, transparent 24%, transparent 100%);
+  }
+  24%
+  {
+    background: radial-gradient(hsl(210, 90%, 54%) 24%, transparent 25%, transparent 100%);
+  }
+  25%
+  {
+    background: radial-gradient(hsl(210, 90%, 54%) 25%, transparent 26%, transparent 100%);
+  }
+  26%
+  {
+    background: radial-gradient(hsl(210, 90%, 54%) 26%, transparent 27%, transparent 100%);
+  }
+  27%
+  {
+    background: radial-gradient(hsl(210, 90%, 54%) 27%, transparent 28%, transparent 100%);
+  }
+  28%
+  {
+    background: radial-gradient(hsl(210, 90%, 54%) 28%, transparent 29%, transparent 100%);
+  }
+  29%
+  {
+    background: radial-gradient(hsl(210, 90%, 54%) 29%, transparent 30%, transparent 100%);
+  }
+  30%
+  {
+    background: radial-gradient(hsl(210, 90%, 54%) 30%, transparent 31%, transparent 100%);
+  }
+  31%
+  {
+    background: radial-gradient(hsl(210, 90%, 54%) 31%, transparent 32%, transparent 100%);
+  }
+  32%
+  {
+    background: radial-gradient(hsl(210, 90%, 54%) 32%, transparent 33%, transparent 100%);
+  }
+  33%
+  {
+    background: radial-gradient(hsl(210, 90%, 54%) 33%, transparent 34%, transparent 100%);
+  }
+  34%
+  {
+    background: radial-gradient(hsl(210, 90%, 54%) 34%, transparent 35%, transparent 100%);
+  }
+  35%
+  {
+    background: radial-gradient(hsl(210, 90%, 54%) 35%, transparent 36%, transparent 100%);
+  }
+  36%
+  {
+    background: radial-gradient(hsl(210, 90%, 54%) 36%, transparent 37%, transparent 100%);
+  }
+  37%
+  {
+    background: radial-gradient(hsl(210, 90%, 54%) 37%, transparent 38%, transparent 100%);
+  }
+  38%
+  {
+    background: radial-gradient(hsl(210, 90%, 54%) 38%, transparent 39%, transparent 100%);
+  }
+  39%
+  {
+    background: radial-gradient(hsl(210, 90%, 54%) 39%, transparent 40%, transparent 100%);
+  }
+  40%
+  {
+    background: radial-gradient(hsl(210, 90%, 54%) 40%, transparent 41%, transparent 100%);
+  }
+  41%
+  {
+    background: radial-gradient(hsl(210, 90%, 54%) 41%, transparent 42%, transparent 100%);
+  }
+  42%
+  {
+    background: radial-gradient(hsl(210, 90%, 54%) 42%, transparent 43%, transparent 100%);
+  }
+  43%
+  {
+    background: radial-gradient(hsl(210, 90%, 54%) 43%, transparent 44%, transparent 100%);
+  }
+  44%
+  {
+    background: radial-gradient(hsl(210, 90%, 54%) 44%, transparent 45%, transparent 100%);
+  }
+  45%
+  {
+    background: radial-gradient(hsl(210, 90%, 54%) 45%, transparent 46%, transparent 100%);
+  }
+  46%
+  {
+    background: radial-gradient(hsl(210, 90%, 54%) 46%, transparent 47%, transparent 100%);
+  }
+  47%
+  {
+    background: radial-gradient(hsl(210, 90%, 54%) 47%, transparent 48%, transparent 100%);
+  }
+  48%
+  {
+    background: radial-gradient(hsl(210, 90%, 54%) 48%, transparent 49%, transparent 100%);
+  }
+  49%
+  {
+    background: radial-gradient(hsl(210, 90%, 54%) 49%, transparent 50%, transparent 100%);
+  }
+  50%
+  {
+    background: radial-gradient(hsl(210, 90%, 54%) 50% transparent 51%, transparent 100%);
+  }
+  51%
+  {
+    background: radial-gradient(hsl(210, 90%, 54%) 51%, transparent 52%, transparent 100%);
+  }
+  52%
+  {
+    background: radial-gradient(hsl(210, 90%, 54%) 52%, transparent 53%, transparent 100%);
+  }
+  53%
+  {
+    background: radial-gradient(hsl(210, 90%, 54%) 53%, transparent 54%, transparent 100%);
+  }
+  54%
+  {
+    background: radial-gradient(hsl(210, 90%, 54%) 54%, transparent 55%, transparent 100%);
+  }
+  55%
+  {
+    background: radial-gradient(hsl(210, 90%, 54%) 55%, transparent 56%, transparent 100%);
+  }
+  56%
+  {
+    background: radial-gradient(hsl(210, 90%, 54%) 56%, transparent 57%, transparent 100%);
+  }
+  57%
+  {
+    background: radial-gradient(hsl(210, 90%, 54%) 57%, transparent 58%, transparent 100%);
+  }
+  58%
+  {
+    background: radial-gradient(hsl(210, 90%, 54%) 58%, transparent 59%, transparent 100%);
+  }
+  59%
+  {
+    background: radial-gradient(hsl(210, 90%, 54%) 59%, transparent 60%, transparent 100%);
+  }
+  60%
+  {
+    background: radial-gradient(hsl(210, 90%, 54%) 60%, transparent 61%, transparent 100%);
+  }
+  61%
+  {
+    background: radial-gradient(hsl(210, 90%, 54%) 61%, transparent 62%, transparent 100%);
+  }
+  62%
+  {
+    background: radial-gradient(hsl(210, 90%, 54%) 62%, transparent 63%, transparent 100%);
+  }
+  63%
+  {
+    background: radial-gradient(hsl(210, 90%, 54%) 63%, transparent 64%, transparent 100%);
+  }
+  64%
+  {
+    background: radial-gradient(hsl(210, 90%, 54%) 64%, transparent 65%, transparent 100%);
+  }
+  65%
+  {
+    background: radial-gradient(hsl(210, 90%, 54%) 65%, transparent 66%, transparent 100%);
+  }
+  66%
+  {
+    background: radial-gradient(hsl(210, 90%, 54%) 66%, transparent 67%, transparent 100%);
+  }
+  67%
+  {
+    background: radial-gradient(hsl(210, 90%, 54%) 67%, transparent 68%, transparent 100%);
+  }
+  68%
+  {
+    background: radial-gradient(hsl(210, 90%, 54%) 68%, transparent 69%, transparent 100%);
+  }
+  69%
+  {
+    background: radial-gradient(hsl(210, 90%, 54%) 69%, transparent 70%, transparent 100%);
+  }
+  70%
+  {
+    background: radial-gradient(hsl(210, 90%, 54%) 70%, transparent 71%, transparent 100%);
+  }
+  71%
+  {
+    background: radial-gradient(hsl(210, 90%, 54%) 71%, transparent 72%, transparent 100%);
+  }
+  72%
+  {
+    background: radial-gradient(hsl(210, 90%, 54%) 72%, transparent 73%, transparent 100%);
+  }
+  73%
+  {
+    background: radial-gradient(hsl(210, 90%, 54%) 73%, transparent 74%, transparent 100%);
+  }
+  74%
+  {
+    background: radial-gradient(hsl(210, 90%, 54%) 74%, transparent 75%, transparent 100%);
+  }
+  75%
+  {
+    background: radial-gradient(hsl(210, 90%, 54%) 75%, transparent 76%, transparent 100%);
+  }
+  76%
+  {
+    background: radial-gradient(hsl(210, 90%, 54%) 76%, transparent 77%, transparent 100%);
+  }
+  77%
+  {
+    background: radial-gradient(hsl(210, 90%, 54%) 77%, transparent 78%, transparent 100%);
+  }
+  78%
+  {
+    background: radial-gradient(hsl(210, 90%, 54%) 78%, transparent 79%, transparent 100%);
+  }
+  79%
+  {
+    background: radial-gradient(hsl(210, 90%, 54%) 79%, transparent 80%, transparent 100%);
+  }
+  80%
+  {
+    background: radial-gradient(hsl(210, 90%, 54%) 80%, transparent 81%, transparent 100%);
+  }
+  81%
+  {
+    background: radial-gradient(hsl(210, 90%, 54%) 81%, transparent 82%, transparent 100%);
+  }
+  82%
+  {
+    background: radial-gradient(hsl(210, 90%, 54%) 82%, transparent 83%, transparent 100%);
+  }
+  83%
+  {
+    background: radial-gradient(hsl(210, 90%, 54%) 83%, transparent 84%, transparent 100%);
+  }
+  84%
+  {
+    background: radial-gradient(hsl(210, 90%, 54%) 84%, transparent 85%, transparent 100%);
+  }
+  85%
+  {
+    background: radial-gradient(hsl(210, 90%, 54%) 85%, transparent 86%, transparent 100%);
+  }
+  86%
+  {
+    background: radial-gradient(hsl(210, 90%, 54%) 86%, transparent 87%, transparent 100%);
+  }
+  87%
+  {
+    background: radial-gradient(hsl(210, 90%, 54%) 87%, transparent 88%, transparent 100%);
+  }
+  88%
+  {
+    background: radial-gradient(hsl(210, 90%, 54%) 88%, transparent 2%, transparent 100%);
+  }
+  89%
+  {
+    background: radial-gradient(hsl(210, 90%, 54%) 89%, transparent 90%, transparent 100%);
+  }
+  90%
+  {
+    background: radial-gradient(hsl(210, 90%, 54%) 90%, transparent 91%, transparent 100%);
+  }
+  91%
+  {
+    background: radial-gradient(hsl(210, 90%, 54%) 91%, transparent 92%, transparent 100%);
+  }
+  92%
+  {
+    background: radial-gradient(hsl(210, 90%, 54%) 92% transparent 93%, transparent 100%);
+  }
+  93%
+  {
+    background: radial-gradient(hsl(210, 90%, 54%) 93%, transparent 94%, transparent 100%);
+  }
+  94%
+  {
+    background: radial-gradient(hsl(210, 90%, 54%) 94%, transparent 95%, transparent 100%);
+  }
+  95%
+  {
+    background: radial-gradient(hsl(210, 90%, 54%) 95%, transparent 96%, transparent 100%);
+  }
+  96%
+  {
+    background: radial-gradient(hsl(210, 90%, 54%) 96%, transparent 97%, transparent 100%);
+  }
+  97%
+  {
+    background: radial-gradient(hsl(210, 90%, 54%) 97%, transparent 98%, transparent 100%);
+  }
+  98%
+  {
+    background: radial-gradient(hsl(210, 90%, 54%) 98%, transparent 99%, transparent 100%);
+  }
+  99%
+  {
+    background: radial-gradient(hsl(210, 90%, 54%) 99%, transparent 100%);
+  }
+  100%
+  {
+    background: radial-gradient(hsl(210, 90%, 54%) 100%, transparent 0%);
+  }
+}
+
+@keyframes blinking_mid{
+  0%
+  {
+    box-shadow: none;
+  }
+  50%
+  {
+    box-shadow: 0 0 0.3rem hsl(220, 98%, 48%),
+    0 0 0.75rem hsl(220, 98%, 48%),
     0 0 1rem hsl(220, 98%, 48%),
-    0 0 1.5rem hsl(220, 98%, 48%);}
-  100% {box-shadow: none;}
+    0 0 3rem hsl(220, 98%, 48%)
+  }
+  100%{
+    box-shadow: none;
+  }
 }
 
 #s3-timeline_circle_bot{
-  margin-left: 5%;
   background-color: black;
   border: solid;
   border-color: hsl(183, 100%, 50%);
@@ -1028,13 +1515,7 @@ section{
   100% {box-shadow: none;}
 }
 
-.s3-timeline_item_title{
-  font-size: 1.5em;
-}
 
-.s3-timeline_item_text{
-  margin-left: 3em;
-}
 
 
 /* Section 4: Tokenomics ----------------------------------------------------------*/
@@ -1053,7 +1534,7 @@ section{
 }
 
 #s4-div_title{
-font-size: 5em;
+font-size: 6.5rem;
 line-height: 0.85em;
 outline: none;
 color: #fff;
@@ -1070,6 +1551,7 @@ text-shadow:
 
 #s4-div_description{
   flex-direction: row;
+  padding: 3em 0 0 0;
 }
 
 #s4-div_info_left{
@@ -1124,8 +1606,6 @@ text-shadow:
   margin-right: 0.7em;
 }
 
-/* 
- */
 
 /* Section 5: Dev Team ----------------------------------------------------------*/
 
@@ -1144,19 +1624,19 @@ text-shadow:
 }
 
 #s5-div_title{
-font-size: 5em;
-line-height: 0.85em;
-outline: none;
-color: #fff;
-font-family: 'Quicksand', cursive;
-font-weight: 100;
-text-shadow:
-  0 0 0.3125rem hsl(0, 0%, 90%), 
-  0 0 0.625rem hsl(51, 98%, 70%), 
-  0 0 1.25rem hsl(51, 98%, 60%),
-  0 0 2rem hsl(51, 98%, 50%),
-  0 0 2.5rem hsl(51, 98%, 40%),
-  0 0 4rem hsl(51, 100%, 30%);
+  font-size: 6.5rem;
+  line-height: 0.85em;
+  outline: none;
+  color: #fff;
+  font-family: 'Quicksand', cursive;
+  font-weight: 100;
+  text-shadow:
+    0 0 0.3125rem hsl(0, 0%, 90%), 
+    0 0 0.625rem hsl(51, 98%, 70%), 
+    0 0 1.25rem hsl(51, 98%, 60%),
+    0 0 2rem hsl(51, 98%, 50%),
+    0 0 2.5rem hsl(51, 98%, 40%),
+    0 0 4rem hsl(51, 100%, 30%);
 }
 
 #s5-div_content{
@@ -1224,8 +1704,15 @@ footer{
   height: min-content;
   display: flex;  
   flex-direction: column;
-  background-color: rgb(103, 103, 103);
+  background-color: black;
   padding: 2rem 0;
+  color: hsl(270, 98%, 48%);
+  box-shadow:
+    inset 0 0 0.625rem currentColor,
+    inset 0 0 1.25rem currentColor,
+    0 0 0.1rem currentColor,
+    0 0 0.4rem currentColor,
+    0 0 0.6rem currentColor;
 }
 
 .foot-div{
