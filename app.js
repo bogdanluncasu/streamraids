@@ -96,10 +96,9 @@ onVisible(about, ()=> about.classList.add('about_neon'));
 onVisible(roadmap, ()=> roadmap.classList.add('roadmap_neon'));
 onVisible(tokenomics, ()=> tokenomics.classList.add('tokenomics_neon'));
 onVisible(theTeam, ()=> theTeam.classList.add('theTeam_neon'));
-// -----------------------------------------------------------------------------
-
 
 // s2 -----------------------------------------------------------------------------
+
 const s2_description_text = document.querySelectorAll('.s2-description_text');
 const s2_description_text_top = s2_description_text[0];
 const s2_description_text_mid = s2_description_text[1];
@@ -108,17 +107,23 @@ const s2_img = document.querySelector('.s2-img');
 onVisible(s2_description_text_top, ()=> s2_description_text_top.classList.add('appear_left'));
 onVisible(s2_description_text_mid, ()=> s2_description_text_mid.classList.add('appear_right'));
 onVisible(s2_img, ()=> s2_img.classList.add('appear_left'));
-// -----------------------------------------------------------------------------
 
-// roadmap_ball -----------------------------------------------------------------------------
+// s3 -----------------------------------------------------------------------------
 
 const roadmap_ball_top = document.getElementById('s3-timeline_circle_top');
 const roadmap_ball_mid = document.getElementById('s3-timeline_circle_mid');
+const s3_timeline_item = document.querySelectorAll('.s3-timeline_item');
+const s3_timeline_item_top = s3_timeline_item[0];
+const s3_timeline_item_mid = s3_timeline_item[1];
+const s3_timeline_item_bot = s3_timeline_item[2];
 
 onVisible(roadmap_ball_top, ()=> roadmap_ball_top.classList.add('fullfill_top'));
 onVisible(roadmap_ball_mid, ()=> roadmap_ball_mid.classList.add('fullfill_mid'));
+onVisible(s3_timeline_item_top, ()=> s3_timeline_item_top.classList.add('appear_left'));
+onVisible(s3_timeline_item_mid, ()=> s3_timeline_item_mid.classList.add('appear_right'));
+onVisible(s3_timeline_item_bot, ()=> s3_timeline_item_bot.classList.add('appear_left'));
 
-// -----------------------------------------------------------------------------
+// letters blinking -----------------------------------------------------------------------------
 
 const letters = document.querySelectorAll('.letter_blink');
 const s2_question = letters[0];
@@ -127,11 +132,21 @@ const s3_title = letters[2];
 
 onVisible(s2_question, ()=> s2_question.classList.add('s2_question_blinking'));
 onVisible(s2_o, ()=> s2_o.classList.add('s2_o_blinking'));
-onVisible(s3_title, ()=> s3_title.classList.add('title_blink'));
 
 // s5 ------------------------------------------------------------------------------
 
+const s5_item = document.querySelectorAll('.s5-team_item');
+const s5_item_1 = s5_item[0];
+const s5_item_2 = s5_item[1];
+const s5_item_3 = s5_item[2];
+const s5_item_4 = s5_item[3];
+const s5_item_5 = s5_item[4];
 
+onVisible(s5_item_1, ()=> s5_item_1.classList.add('s5_item_animation_1'));
+onVisible(s5_item_2, ()=> s5_item_2.classList.add('s5_item_animation_2'));
+onVisible(s5_item_3, ()=> s5_item_3.classList.add('s5_item_animation_3'));
+onVisible(s5_item_4, ()=> s5_item_4.classList.add('s5_item_animation_4'));
+onVisible(s5_item_5, ()=> s5_item_5.classList.add('s5_item_animation_5'));
 
 
 
