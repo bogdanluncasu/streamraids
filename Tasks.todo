@@ -1,34 +1,27 @@
 Changes - bugs:
-    ☐ Nav bar not working correctly
-    ☐ Canviar color de side_bar i side_bar active cuandoa acabe
-    ☐ Canviar imatges
-    ☐ Ficar imatge a la dreta del why
-    ☐ Canviar el blanc per el gris de altura
-    ☐ Canviar el header i la side_bar
+    ✔ Nav bar not working correctly @done (31/5/2021 11:13:37)
+    ✔ Canviar color de side_bar i side_bar active cuandoa acabe @done (31/5/2021 11:13:48)
+    ✔ Canviar imatges @done (31/5/2021 11:13:50)
+    ☐ Ficar imatge a la esquerra del how
+    ✔ Canviar el blanc per el gris de altura @done (31/5/2021 11:14:03)
+    ✔ Canviar el header i la side_bar @done (31/5/2021 11:14:07)
     ✔ Linia separadora 1 i 2 pagina no se ve @done (28/5/2021 17:53:18)
-    ☐ Eliminar cosas de el otro tipo de neon
-    ☐ Descomentar el position absolute del s1 i el ml4
-    ☐ Poner fondo gris a 
-    ☐ Animacion parpadeo
-
-
-Coses canviades:
-    He ficat un text-align al s2-description_text pq estigui mes formal
-    Tmb he ficat interrogants pq wtf sino no es pregunta lol
-
-
-    
-    
-Extra ideas:
+    ✔ Eliminar cosas de el otro tipo de neon @done (31/5/2021 11:14:26)
+    ✔ Descomentar el position absolute del s1 i el ml4 @done (31/5/2021 11:43:46)
+    ✔ Poner fondo gris a las cartas de the team @done (31/5/2021 12:49:36)
+    ✔ Animacion parpadeo @done (31/5/2021 11:14:34)
+    ✔ Espai entre iconos de social media de the teams @done (31/5/2021 12:46:41)
+    ✔ Acabar de pulit la intro, entrada de navbar i sidebar (ficar-los-hi una animacio de arribar per adalt i pel canto) @done (31/5/2021 11:43:26)
     ☐ Boss Linkedin
     ☐ Favicon (cal el logo)
+
 Secciones HomePage:
-    ☐ Landing Page
-    ☐ Details/Info
-    ☐ Roadmap
-    ☐ Tokenomics
+    ✔ Landing Page @done (31/5/2021 11:15:20)
+    ✔ Details/Info @done (31/5/2021 11:15:21)
+    ✔ Roadmap @done (31/5/2021 11:15:23)
+    ✔ Tokenomics @done (31/5/2021 11:15:24)
     ☐ Dev team
-    ☐ Footer
+    ✔ Footer @done (31/5/2021 11:15:25)
 
 Otras páginas:
     ☐ FAQ
@@ -36,9 +29,9 @@ Otras páginas:
     ☐ Step by step tutorial for crypto newcomers
 
 Colores:
-    ☐ Home Lila
-    ☐ About Rosa
-    ☐ Roadmap Azul
-    ☐ Tokenomics Verd
-    ☐ The team Groc
+    ✔ Home Lila @done (31/5/2021 11:15:34)
+    ✔ About Rosa @done (31/5/2021 11:15:33)
+    ✔ Roadmap Azul @done (31/5/2021 11:15:33)
+    ✔ Tokenomics Verd @done (31/5/2021 11:15:32)
+    ✔ The team Groc @done (31/5/2021 11:15:31)
     

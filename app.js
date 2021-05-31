@@ -4,8 +4,8 @@ var ml4 = {};
 ml4.opacityIn = [0,1];
 ml4.scaleIn = [0.2, 1];
 ml4.scaleOut = 3;
-ml4.durationIn = 700;
-ml4.durationOut = 700;
+ml4.durationIn = 500;
+ml4.durationOut = 500;
 ml4.delay = 500;
 
 anime.timeline({loop: false})
@@ -47,7 +47,7 @@ anime.timeline({loop: false})
   }).add({
     targets: '.ml4-div',
     scale: 0,
-    duration: ml4.durationOut,
+    duration: 700,
     easing: "easeInExpo",
     delay: ml4.delay
   });
