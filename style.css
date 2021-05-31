@@ -3571,4 +3571,21 @@ header{
   }
 }
 
+@media only screen and (hover: none) and (pointer: coarse){
+  html{
+    font-size: 200px;
+  }
+  .buy_button{
+  color: blue;
+  display: flex;
+  min-width: 8em;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s;
+  border: white;
+  border-style: solid;
+  border-radius: 0.8em;
+}
+}
+
 
