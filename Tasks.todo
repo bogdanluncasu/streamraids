@@ -1,50 +1,7 @@
-HEAD:
-    ✔ Description @done (18/5/2021 16:49:51)
-
-Nav-bar:
-    ✔ Change links @done (18/5/2021 10:11:35)
-    ✔ Logo @done (18/5/2021 10:05:17)
-    ✔ fix it @done (18/5/2021 10:11:40)
-        
-Section 1:
-    ✔ font of text @done (18/5/2021 18:52:24)
-    
-Section 2:
-    ✔ change image @done (18/5/2021 10:05:23)
-Section 3:
-    
-Section 4:
-✔ canviar id @done (18/5/2021 18:52:29)
-GOES WRONG RESOLUTION:
-    ✔ -2048x1080 - Boton inicial, s4 @done (18/5/2021 21:15:43)
-    ✔ -2048x1152 - Boton inicial, s4 @done (18/5/2021 21:16:29)
-    ✔ -1920x1200 - Boton inicial @done (18/5/2021 21:16:59)
-    ✔ -1920x1080 - Boton inicial, s2 parte debajo, s4 @done (18/5/2021 21:17:30)
-    ✔ -1280x1024 - Boton inicial, s3 @done (18/5/2021 21:18:05)
-    ✔ -1366x768 - s2, s3 @done (18/5/2021 21:18:26)
-    ✔ -1280x720 - s2, s3, s4 @done (18/5/2021 21:18:57)
-    ✔ -1152x864 - s2, s3, s4 @done (18/5/2021 22:24:53)
-    ✔ -1024x768 - boton, s2, s3 @done (18/5/2021 21:19:58)
-    ✔ -850x480 - boton, s2, s3, s4 @done (18/5/2021 22:25:13)
-    ✔ -800x600 - boton, s2, s3, s4 @done (18/5/2021 21:20:46)
-    ✔ -720x360 - Inicio, s2, s3, s4 @done (18/5/2021 22:25:35)
-    ✔ -720x350 - lo mismo @done (18/5/2021 22:25:49)
-    ☐ -720x348 - bajar la s2
-    ✔ -640x480 - lo mismo @done (18/5/2021 22:26:33)
-    ✔ -640x350 - same @done (18/5/2021 22:26:50)
-    ✔ -512x384 - same @done (18/5/2021 22:27:10)
-    ✔ -320x240 @done (18/5/2021 22:27:30)
-    ✔ -1680x1050 - boton, s311 @done (18/5/2021 21:24:18)
-    ✔ -1280x720 - s2 i s4 @done (18/5/2021 21:24:19)
-    ✔ -1600x900 - boton @done (18/5/2021 21:24:39)¡
-
-
-
 Changes - bugs:
-    ✔ stream en lugar de strem raid i quitar small @done (18/5/2021 20:30:40)
-    ✔ corrections on grammar @done (18/5/2021 20:34:29)
-    ☐ Nav bar not working correctly 
-    ☐ Links don't work right
-    ☐ When navigating the web using the navbar, it doesn't detect a change on the page and it crashes when navigating with the mouse
-Extra ideas:
-    ☐ Boss Linkedin
+    ☐ Api numeritos
+Otras páginas:
+    ☐ FAQ
+    ☐ Raid Clips
+    ☐ Step by step tutorial for crypto newcomers
+    

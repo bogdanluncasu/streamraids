@@ -1,3 +1,176 @@
+// LETRAS ----------------------------------------------------------------------------------
+
+var ml4 = {};
+ml4.opacityIn = [0,1];
+ml4.scaleIn = [0.2, 1];
+ml4.scaleOut = 3;
+ml4.durationIn = 500;
+ml4.durationOut = 500;
+ml4.delay = 500;
+
+anime.timeline({loop: false})
+  .add({
+    targets: '.ml4 .letters-1',
+    opacity: ml4.opacityIn,
+    scale: ml4.scaleIn,
+    duration: ml4.durationIn
+  }).add({
+    targets: '.ml4 .letters-1',
+    opacity: 0,
+    scale: ml4.scaleOut,
+    duration: ml4.durationOut,
+    easing: "easeInExpo",
+    delay: ml4.delay
+  }).add({
+    targets: '.ml4 .letters-2',
+    opacity: ml4.opacityIn,
+    scale: ml4.scaleIn,
+    duration: ml4.durationIn
+  }).add({
+    targets: '.ml4 .letters-2',
+    opacity: 0,
+    scale: ml4.scaleOut,
+    duration: ml4.durationOut,
+    easing: "easeInExpo",
+    delay: ml4.delay
+  }).add({
+    targets: '.ml4 .letters-3',
+    opacity: ml4.opacityIn,
+    scale: ml4.scaleIn,
+    duration: ml4.durationIn
+  }).add({
+    targets: '.ml4-div',
+    opacity: 0,
+    duration: ml4.durationOut,
+    easing: "easeInExpo",
+    delay: ml4.delay
+  }).add({
+    targets: '.ml4-div',
+    scale: 0,
+    duration: 700,
+    easing: "easeInExpo",
+    delay: ml4.delay
+  });
+
+// ------------------------------------------------------------------------------
+
+const side_bar = document.querySelector('.side_bar');
+const side_bar_list = document.querySelector('.side_bar_list');
+const side_bar_pancake = document.querySelector('.social_media-img_pancake');
+const side_bar_twitter = document.querySelector('.social_media-img_twitter');
+const side_bar_twitch = document.querySelector('.social_media-img_twitch');
+const side_bar_telegram = document.querySelector('.social_media-img_telegram');
+
+
+document.querySelector('.toggle').onclick = function(){
+  this.classList.toggle('active');
+  side_bar.classList.toggle('active');
+  side_bar_list.classList.toggle('active');
+  side_bar_pancake.classList.toggle('active')
+  side_bar_twitter.classList.toggle('active')
+  side_bar_twitch.classList.toggle('active')
+  side_bar_telegram.classList.toggle('active')
+}
+
+// ------------------------------------------------------------------------------
+
+function onVisible(element, callback) {
+  new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if(entry.intersectionRatio > 0) {
+        callback(element);
+        observer.disconnect();
+      }
+    });
+  }).observe(element);
+}
+
+// divider -----------------------------------------------------------------------------
+const divider = document.querySelectorAll('.divider');
+const about = divider[0];
+const roadmap = divider[1];
+const tokenomics = divider[2];
+const theTeam = divider[3];
+
+onVisible(about, ()=> about.classList.add('about_neon'));
+onVisible(roadmap, ()=> roadmap.classList.add('roadmap_neon'));
+onVisible(tokenomics, ()=> tokenomics.classList.add('tokenomics_neon'));
+onVisible(theTeam, ()=> theTeam.classList.add('theTeam_neon'));
+
+// s2 -----------------------------------------------------------------------------
+
+const s2_description_text = document.querySelectorAll('.s2-description_text');
+const s2_description_text_top = s2_description_text[0];
+const s2_description_text_mid = s2_description_text[1];
+const s2_img = document.querySelector('.s2-img');
+
+onVisible(s2_description_text_top, ()=> s2_description_text_top.classList.add('appear_left'));
+onVisible(s2_description_text_mid, ()=> s2_description_text_mid.classList.add('appear_right'));
+onVisible(s2_img, ()=> s2_img.classList.add('appear_left'));
+
+// s3 -----------------------------------------------------------------------------
+
+const roadmap_ball_top = document.getElementById('s3-timeline_circle_top');
+const roadmap_ball_mid = document.getElementById('s3-timeline_circle_mid');
+const s3_timeline_item = document.querySelectorAll('.s3-timeline_item');
+const s3_timeline_item_top = s3_timeline_item[0];
+const s3_timeline_item_mid = s3_timeline_item[1];
+const s3_timeline_item_bot = s3_timeline_item[2];
+
+onVisible(roadmap_ball_top, ()=> roadmap_ball_top.classList.add('fullfill_top'));
+onVisible(roadmap_ball_mid, ()=> roadmap_ball_mid.classList.add('fullfill_mid'));
+onVisible(s3_timeline_item_top, ()=> s3_timeline_item_top.classList.add('appear_left'));
+onVisible(s3_timeline_item_mid, ()=> s3_timeline_item_mid.classList.add('appear_right'));
+onVisible(s3_timeline_item_bot, ()=> s3_timeline_item_bot.classList.add('appear_left'));
+
+// letters blinking -----------------------------------------------------------------------------
+
+const letters = document.querySelectorAll('.letter_blink');
+const s2_question = letters[0];
+const s2_o = letters[1];
+const s3_title = letters[2];
+
+onVisible(s2_question, ()=> s2_question.classList.add('s2_question_blinking'));
+onVisible(s2_o, ()=> s2_o.classList.add('s2_o_blinking'));
+
+// s5 ------------------------------------------------------------------------------
+
+const s5_item = document.querySelectorAll('.s5-team_item');
+const s5_item_1 = s5_item[0];
+const s5_item_2 = s5_item[1];
+const s5_item_3 = s5_item[2];
+const s5_item_4 = s5_item[3];
+const s5_item_5 = s5_item[4];
+
+onVisible(s5_item_1, ()=> s5_item_1.classList.add('s5_item_animation_1'));
+onVisible(s5_item_2, ()=> s5_item_2.classList.add('s5_item_animation_2'));
+onVisible(s5_item_3, ()=> s5_item_3.classList.add('s5_item_animation_3'));
+onVisible(s5_item_4, ()=> s5_item_4.classList.add('s5_item_animation_4'));
+onVisible(s5_item_5, ()=> s5_item_5.classList.add('s5_item_animation_5'));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
 TweenMax.defaultEase = Linear.easeOut;
 
 window.mobileAndTabletCheck = function() {
@@ -28,3 +201,4 @@ new fullpage("#fullpage", {
     }
   }
 });
+*/
