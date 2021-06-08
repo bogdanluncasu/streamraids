@@ -422,7 +422,7 @@ section{
 
 .side_bar.active{
   width: 3rem;
-  height: 17rem;
+  height: 19rem;
   border-radius: 3rem;
   transition: width 0.25s, height 1.25s ease-out;
   transition-delay: 0s, 0s;
@@ -439,10 +439,10 @@ section{
   left: 0;
   width: 100%;
   height: 3rem;
+  border-radius: 3rem;
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 3rem;
   transition: top 1s, left 0s, background 2s, box-shadow 1.25s;
   transition-delay: 0s, 0s, 1s, 0s;
   cursor: pointer;
@@ -510,7 +510,7 @@ section{
 
 .side_bar_list.active{
   position: relative;
-  top: -20%;
+  top: -15%;
   left: 0;
   width: 100%;
   height: 80%;
@@ -523,8 +523,8 @@ section{
   position: relative;
   list-style: none;
   width: 100%;
-  height: 25%;
-  padding: 2.5% 1%;
+  height: 20%;
+  padding: 2% 1%;
 }
 
 .side_bar-social_media{
@@ -544,13 +544,13 @@ section{
   height: 100%;
   align-items: center;
   justify-content: center;
-  padding: 10%;
+  padding: 5%;
 }
 
 .social_media-img{
   width: 100%;
   height: 100%;
-  padding: 5%;
+  padding: 2.5%;
 }
 
 .social_media-img_pancake{
@@ -577,28 +577,40 @@ section{
   transition-delay: 1.25s;
 }
 
-.social_media-img_twitter{
+.social_media-img_youtube{
   opacity: 0;
   transition: opacity 0.25s;
   transition-delay: 1.15s;
 }
 
-.social_media-img_twitter.active{
+.social_media-img_youtube.active{
   opacity: 1;
   transition: opacity 2s;
   transition-delay: 1s;
 }
 
-.social_media-img_telegram{
+.social_media-img_twitter{
   opacity: 0;
   transition: opacity 0.25s;
   transition-delay: 1.3s;
 }
 
-.social_media-img_telegram.active{
+.social_media-img_twitter.active{
   opacity: 1;
   transition: opacity 2s;
   transition-delay: 0.75s;
+}
+
+.social_media-img_telegram{
+  opacity: 0;
+  transition: opacity 0.25s;
+  transition-delay: 1.5s;
+}
+
+.social_media-img_telegram.active{
+  opacity: 1;
+  transition: opacity 2s;
+  transition-delay: 0.5s;
 }
 
 .social_media-p{
