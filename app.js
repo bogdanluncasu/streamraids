@@ -90,11 +90,13 @@ function onVisible(element, callback) {
 // divider -----------------------------------------------------------------------------
 const divider = document.querySelectorAll('.divider');
 const about = divider[0];
-const roadmap = divider[1];
-const tokenomics = divider[2];
-const theTeam = divider[3];
+const media = divider[1];
+const roadmap = divider[2];
+const tokenomics = divider[3];
+const theTeam = divider[4];
 
 onVisible(about, ()=> about.classList.add('about_neon'));
+onVisible(media, ()=> media.classList.add('media_neon'));
 onVisible(roadmap, ()=> roadmap.classList.add('roadmap_neon'));
 onVisible(tokenomics, ()=> tokenomics.classList.add('tokenomics_neon'));
 onVisible(theTeam, ()=> theTeam.classList.add('theTeam_neon'));

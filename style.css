@@ -85,6 +85,11 @@ section{
   animation: about_blinking 1s reverse;
 }
 
+.media_neon{
+  color: hsl(320, 98%, 48%);
+  animation: about_blinking 1s reverse;
+}
+
 .roadmap_neon{
   color: hsl(190, 98%, 48%);
   animation: roadmap_blinking 4s reverse;
@@ -931,6 +936,84 @@ section{
 .s2-img img{
   width: 100%;
   height: 100%;
+}
+
+/* Section 6: Media ---------------------------------------------------------------------- */
+
+.s6{
+  flex-direction: column;
+  padding: 6rem 2rem;
+  font-size: 1rem;
+  background-color: black;
+}
+
+.s6-div_Media{
+  width: 100%;
+  display: flex;
+  color: #fff;
+  text-shadow: none;
+}
+
+#s6-div_title{
+  justify-content: center;
+  align-items: center;
+  padding: 0 0 5.5rem 0;
+  font-size: 6.5rem;
+  line-height: 0.85em;
+  outline: none;
+  color: #fff;
+  font-family: 'Quicksand', cursive;
+  font-weight: 100;
+  text-shadow:
+    0 0 0.3125rem hsl(0, 0%, 90%), 
+    0 0 0.625rem hsl(320, 98%, 70%), 
+    0 0 1.25rem hsl(320, 98%, 60%),
+    0 0 2rem hsl(320, 98%, 50%),
+    0 0 2.5rem hsl(320, 98%, 40%),
+    0 0 4rem hsl(320, 100%, 30%);
+}
+
+#s6-div_content{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+#s6-video{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60%;
+  height: 100%;
+}
+
+#s6-navigation{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 15%;
+  height: 100%;
+}
+
+#s6-navigation li{
+  width: 100%;
+  list-style: none;
+  cursor: pointer;
+  margin: 0.5rem 0;
+  border-radius: 10%;
+  opacity: 0.7;
+}
+
+#s6-navigation li img{
+  width: 100%;
+  height: auto;
+  transition: 0.5s;
+}
+
+#s6-navigation li img:hover{
+  width: 110%;
 }
 
 /* Section 3: Roadmap ----------------------------------------------------------*/
