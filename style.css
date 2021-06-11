@@ -984,7 +984,13 @@ section{
   justify-content: center;
   align-items: center;
   width: 80%;
-  height: 90vh;
+  height: auto;
+  box-shadow: 0 0 0.25rem hsl(0, 0%, 90%),
+  0 0 0.10rem hsl(320, 98%, 70%), 
+  0 0 0.15rem hsl(320, 98%, 60%),
+  0 0 0.5rem hsl(320, 98%, 50%),
+  0 0 0.75rem hsl(320, 98%, 40%),
+  0 0 1rem hsl(320, 100%, 30%);
 }
 
 #s6-video iframe{
@@ -999,7 +1005,7 @@ section{
   justify-content: center;
   align-items: center;
   width: 15%;
-  height: 90vh;
+  height: 35rem;
 }
 
 #s6-navigation li{
@@ -1026,7 +1032,7 @@ section{
 }
 
 #s6-navigation li img:hover{
-  width: 110%;
+  transform: scale(1.1) translateY(-0.4rem);
 }
 
 /* Section 3: Roadmap ----------------------------------------------------------*/
