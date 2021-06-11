@@ -112,6 +112,12 @@ onVisible(s2_description_text_top, ()=> s2_description_text_top.classList.add('a
 onVisible(s2_description_text_mid, ()=> s2_description_text_mid.classList.add('appear_right'));
 onVisible(s2_img, ()=> s2_img.classList.add('appear_left'));
 
+// s6 -----------------------------------------------------------------------------
+
+function videoUrl(embed_video){
+  document.getElementById('s6-video_iframe').src = "https:/" + embed_video;
+}
+
 // s3 -----------------------------------------------------------------------------
 
 const roadmap_ball_top = document.getElementById('s3-timeline_circle_top');

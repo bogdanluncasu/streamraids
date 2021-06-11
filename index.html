@@ -164,13 +164,13 @@
 
     <div class="divider noselect" id="divider_about"></div>
 
-    <section id="Media" class="s6">
+    <section class="s6" id="Media">
       <div class="s6-div_Media noselect" id="s6-div_title">Media</div>
       <div class="s6-div_Media" id="s6-div_content">
-        <iframe id="s6-video" src="https://www.youtube.com/embed/X2vy4Z9hQZg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <div id="s6-video"><iframe id="s6-video_iframe" src="https://www.youtube.com/embed/X2vy4Z9hQZg" frameborder="0"></iframe></div>
         <ul id="s6-navigation">
-          <li><img src="media/bobczak_thumbnail.png" alt="bobczak_thumbnail"></li>
-          <li><img src="media/joryavnermusic_thumbnail.png" alt="joryavnermusic_thumbnail"></li>
+          <li onclick='videoUrl("/www.youtube.com/embed/X2vy4Z9hQZg?autoplay=1")'><img src="media/bobczak_thumbnail.png" alt="bobczak_thumbnail"></li>
+          <li onclick='videoUrl("/www.youtube.com/embed/_8TTatRJlL8?autoplay=1")'><img src="media/joryavnermusic_thumbnail.png" alt="joryavnermusic_thumbnail"></li>
         </ul>
       </div>
     </section>
