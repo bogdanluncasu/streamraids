@@ -90,11 +90,13 @@ function onVisible(element, callback) {
 // divider -----------------------------------------------------------------------------
 const divider = document.querySelectorAll('.divider');
 const about = divider[0];
-const roadmap = divider[1];
-const tokenomics = divider[2];
-const theTeam = divider[3];
+const media = divider[1];
+const roadmap = divider[2];
+const tokenomics = divider[3];
+const theTeam = divider[4];
 
 onVisible(about, ()=> about.classList.add('about_neon'));
+onVisible(media, ()=> media.classList.add('media_neon'));
 onVisible(roadmap, ()=> roadmap.classList.add('roadmap_neon'));
 onVisible(tokenomics, ()=> tokenomics.classList.add('tokenomics_neon'));
 onVisible(theTeam, ()=> theTeam.classList.add('theTeam_neon'));
@@ -109,6 +111,12 @@ const s2_img = document.querySelector('.s2-img');
 onVisible(s2_description_text_top, ()=> s2_description_text_top.classList.add('appear_left'));
 onVisible(s2_description_text_mid, ()=> s2_description_text_mid.classList.add('appear_right'));
 onVisible(s2_img, ()=> s2_img.classList.add('appear_left'));
+
+// s6 -----------------------------------------------------------------------------
+
+function videoUrl(embed_video){
+  document.getElementById('s6-video_iframe').src = "https:/" + embed_video;
+}
 
 // s3 -----------------------------------------------------------------------------
 
