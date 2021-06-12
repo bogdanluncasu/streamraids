@@ -86,8 +86,8 @@ section{
 }
 
 .media_neon{
-  color: hsl(320, 98%, 48%);
-  animation: about_blinking 1s reverse;
+  color: hsl(260, 98%, 55%);
+  animation: media_blinking 1s reverse;
 }
 
 .roadmap_neon{
@@ -120,6 +120,30 @@ section{
   40%, 65%, 100%
   {
     color: hsl(320, 98%, 48%);
+    box-shadow:
+    inset 0 0 0.625rem currentColor,
+    inset 0 0 1.25rem currentColor,
+    0 0 0.1rem currentColor,
+    0 0 0.4rem currentColor,
+    0 0 0.6rem currentColor;
+  }
+}
+
+@keyframes tokenomics_blinking{
+  0%, 18%, 20%, 70%, 72%, 73%
+  {
+    color: black;
+    box-shadow:
+    inset 0 0 0.625rem currentColor,
+    inset 0 0 1.25rem currentColor,
+    0 0 0.1rem currentColor,
+    0 0 0.4rem currentColor,
+    0 0 0.6rem currentColor;
+
+  }
+  18.5%, 20.5%, 70.5%, 72.5%, 73.1%, 100%
+  {
+    color: hsl(260, 98%, 55%);
     box-shadow:
     inset 0 0 0.625rem currentColor,
     inset 0 0 1.25rem currentColor,
@@ -354,7 +378,7 @@ section{
 
 .nav_bar{
   z-index: 1000;
-  width: 70%;
+  width: 75%;
   height: 100%;
   padding: 0em 0.75em;
   display: flex;
@@ -388,6 +412,9 @@ section{
 }
 #Nav_about:hover{
   color: hsl(300, 98%, 48%);
+}
+#Nav_media:hover{
+  color: hsl(260, 98%, 48%);
 }
 #Nav_roadmap:hover{
   color: hsl(190, 98%, 48%);
@@ -900,11 +927,11 @@ section{
   font-weight: 100;
   text-shadow:
     0 0 0.3125rem hsl(0, 0%, 90%), 
-    0 0 0.625rem hsl(320, 98%, 70%), 
-    0 0 1.25rem hsl(320, 98%, 60%),
-    0 0 2rem hsl(320, 98%, 50%),
-    0 0 2.5rem hsl(320, 98%, 40%),
-    0 0 4rem hsl(320, 100%, 30%);
+    0 0 0.625rem hsl(310, 97%, 70%), 
+    0 0 1.25rem hsl(310, 98%, 60%),
+    0 0 2rem hsl(310, 98%, 50%),
+    0 0 2.5rem hsl(310, 98%, 40%),
+    0 0 4rem hsl(310, 100%, 30%);
 }
 
 #s2_how{
@@ -965,12 +992,12 @@ section{
   font-family: 'Quicksand', cursive;
   font-weight: 100;
   text-shadow:
-    0 0 0.3125rem hsl(0, 0%, 90%), 
-    0 0 0.625rem hsl(320, 98%, 70%), 
-    0 0 1.25rem hsl(320, 98%, 60%),
-    0 0 2rem hsl(320, 98%, 50%),
-    0 0 2.5rem hsl(320, 98%, 40%),
-    0 0 4rem hsl(320, 100%, 30%);
+  0 0 0.3125rem hsl(0, 0%, 90%), 
+  0 0 0.625rem hsl(260, 97%, 70%), 
+  0 0 1.25rem hsl(260, 98%, 60%),
+  0 0 2rem hsl(260, 98%, 50%),
+  0 0 2.5rem hsl(260, 98%, 40%),
+  0 0 4rem hsl(260, 100%, 30%);
 }
 
 #s6-div_content{
@@ -986,11 +1013,11 @@ section{
   width: 80%;
   height: auto;
   box-shadow: 0 0 0.25rem hsl(0, 0%, 90%),
-  0 0 0.10rem hsl(320, 98%, 70%), 
-  0 0 0.15rem hsl(320, 98%, 60%),
-  0 0 0.5rem hsl(320, 98%, 50%),
-  0 0 0.75rem hsl(320, 98%, 40%),
-  0 0 1rem hsl(320, 100%, 30%);
+  0 0 0.20rem hsl(260, 98%, 70%), 
+  0 0 0.3rem hsl(260, 98%, 60%),
+  0 0 0.5rem hsl(260, 98%, 50%),
+  0 0 0.1rem hsl(260, 98%, 40%),
+  0 0 1.5rem hsl(260, 100%, 30%);
 }
 
 #s6-video iframe{
@@ -1667,6 +1694,30 @@ footer{
   }
   .s2-description_text{
     font-size: 2.5em;
+  }
+
+  #s6-div_title{
+    font-size: 10rem;
+  }
+  #s6-div_content{
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  #s6-video{
+    width: 100%;
+    height: 30rem;
+  }
+  #s6-navigation{
+    flex-direction: row;
+    height: auto;
+    width: 100%;
+    height: auto;
+    margin-top: 2rem;
+  }
+  #s6-navigation li{
+    width: 30%;
+    margin: 0.5rem 0.75rem;
   }
 
   #s3-div_title{
