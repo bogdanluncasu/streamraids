@@ -15,6 +15,7 @@ $(document).ready ( function () {
   }
 
   var accounts = undefined;
+  var connected = False;
 
   enable_submissions = function(){
     $("#auth_section").hide();
@@ -77,11 +78,13 @@ $(document).ready ( function () {
 
   $("#enableMetamask").on("click", function() {
     if(!is_metamask_installed) return;
+    if(connected) return;
     console.log("Connect");
     if(ethereum!==undefined){
       ethereum.request({ method: 'eth_requestAccounts' }).then((result) => {
         accounts = result;
         set_wallet_details(accounts[0]);
+        connected=true;
       });
     }
   });
