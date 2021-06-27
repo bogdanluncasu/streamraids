@@ -59,12 +59,29 @@ $(document).ready ( function () {
 
   }
 
+  set_wallet_details = function(account){
+    $("#wallet_address").text(account);
+    $("#connect_label").text("CONNECTED");
+    $.ajax({
+        type: "POST",
+        url: backend_url+"wallet/ballance/"+account,
+        async: true,
+        data: JSON.stringify(request_body),
+        contentType: 'application/json'
+    }).done(function(data) {
+      $("#srt_amount").text(data);
+    }).fail(function()  {
+      console.log("error occured when fetching amount");
+    });
+  }
+
   $("#enableMetamask").on("click", function() {
     if(!is_metamask_installed) return;
     console.log("Connect");
     if(ethereum!==undefined){
       ethereum.request({ method: 'eth_requestAccounts' }).then((result) => {
         accounts = result;
+        set_wallet_details(accounts[0]);
       });
     }
   });
