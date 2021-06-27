@@ -11,7 +11,10 @@
     <link rel="icon" href="./media/Logotype_SVG.svg">
     <link rel=”mask-icon” href=”./media/Logotype_SVG.svg” color='#000000'>
     <title>Voting Platform | StreamRaids</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://requirejs.org/docs/release/2.3.5/minified/require.js"></script>
     <script src="https://kit.fontawesome.com/1f2a7c4ad4.js" crossorigin="anonymous"></script>
+    <script src="./js/bundle.js"></script>
     <meta
             name="description"
             content="The streaming platforms are increasing day by day, the pandemic made many people join the streaming community and as a result, we can see the outburst these platforms had in the last months.
@@ -19,63 +22,6 @@
 </head>
 
 <body>
-
-    <!-- <div class="side_bar noselect s1-opacity_appear">
-        <div class="toggle"></div>
-        <ul class="side_bar_list">
-          <li class="side_bar-list-item" id="list_item-PancakeSwap">
-            <a class="side_bar-social_media link" href="https://exchange.pancakeswap.finance/#/swap?outputCurrency=0x115a49871f02c522090cb45bbe715db406cafa33" target="_blank">
-              <span class="social_media-img_span social_media-span">
-                <img class="social_media-img_pancake social_media-img invert" id="side_bar-pancake_icon" src="./media/pancakeswap.svg" alt="pancakeswap">
-              </span>
-              <span class="social_media_text_span social_media-span">
-                <p class="social_media-p">PancakeSwap</p>
-              </span>
-            </a>
-          </li>
-          <li class="side_bar-list-item" id="list_item-Twitch">
-            <a class="side_bar-social_media link" href="https://www.twitch.tv/streamraidsbsc/" target="_blank">
-              <span class="social_media-img_span social_media-span">
-                <img class="social_media-img_twitch social_media-img invert" id="side_bar-twitch_icon" src="./media/twitch.svg" alt="twitch">
-              </span>
-              <span class="social_media_text_span social_media-span">
-                <p class="social_media-p">Twitch</p>
-              </span>
-            </a>
-          </li>
-          <li class="side_bar-list-item" id="list_item-Youtube">
-            <a class="side_bar-social_media link" href="https://www.youtube.com/channel/UCSJgK9usWKYmXQ7BXL0aqEA" target="_blank">
-              <span class="social_media-img_span social_media-span">
-                <img class="social_media-img_youtube social_media-img invert" id="side_bar-youtube_icon" src="./media/youtube.svg" alt="youtube">
-              </span>
-              <span class="social_media_text_span social_media-span">
-                <p class="social_media-p">Youtube</p>
-              </span>
-            </a>
-          </li>
-          <li class="side_bar-list-item" id="list_item-Twitter">
-            <a class="side_bar-social_media link" href="https://twitter.com/StreamRaidsBSC" target="_blank">
-              <span class="social_media-img_span social_media-span">
-                <img class="social_media-img_twitter social_media-img invert" id="side_bar-twitter_icon" src="./media/twitter.svg" alt="twitter">
-              </span>
-              <span class="social_media_text_span social_media-span">
-                <p class="social_media-p">Twitter</p>
-              </span>
-            </a>
-          </li>
-          <li class="side_bar-list-item" id="list_item-Telegram">
-            <a class="side_bar-social_media link" href="https://t.me/streamraidsbsc" target="_blank">
-              <span class="social_media-img_span social_media-span">
-                <img class="social_media-img social_media-img_telegram" id="side_bar-telegram_icon" src="./media/telegram.svg" alt="telegram">
-              </span>
-              <span class="social_media_text_span social_media-span">
-                <p class="social_media-p">Telegram</p>
-              </span>
-            </a>
-          </li>
-        </ul>
-      </div> -->
-
     <header class="header noselect s1-opacity_appear">
         <div class="logo_div">
           <a class="logo_link link" href="https://poocoin.app/tokens/0x115a49871f02c522090cb45bbe715db406cafa33" target="_blank">
@@ -83,10 +29,8 @@
           </a>
         </div>
         <nav class="nav_bar">
-            <a class="nav_bar-a" id="Nav_mainSite" href="../index.html"><span>Main Site</span></a>
-            <a class="nav_bar-a" id="Nav_roadmap" href="../index.html#Roadmap"><span>Roadmap</span></a>
-            <a class="nav_bar-a" id="Nav_theTeam" href="../index.html#The_Team"><span>The Team</span></a>
-            <a class="nav_bar-a" id="Nav_help" href="../index.html#Help"><span>Help</span></a>
+            <a class="nav_bar-a" target="_blank" rel="voting_platform" id="Nav_mainSite" href="https://streamraids.net"><span>Main Site</span></a>
+            <a class="nav_bar-a" href="#" onclick="enable_submissions()"><span>Submit streamer</span></a>
         </nav>
         <div class="wallet_div">
           <div class="wallet_div-metamask">
@@ -106,13 +50,14 @@
             <div class="auth_section-div_img">
                 <img class="auth_section-img" src="./media/MetaMask_Fox.png" alt="">
             </div>
-            <button class="auth_section-button noselect"><p>CONNECT</p></button>
+            <button class="auth_section-button noselect" id="enableMetamask"><p>CONNECT</p></button>
+
             <p class="auth_section-paragraf">Please connect a wallet to access the voting platform.</p>
-            <p class="auth_section-paragraf">Remember, you needto be holding $SRT to vote!</p>
+            <p class="auth_section-paragraf">Remember, you need to be holding $SRT to vote!</p>
         </div>
     </section>
 
-    <section id="submit_section">
+    <section id="submit_section" style="display:none">
       <img src="./media/Background.png" class="background_img" alt="Voting platform background">
         <div class="submit_section-container">
             <div class="common-div">
@@ -139,24 +84,24 @@
                 </div>
             </div>
             <div class="submit_section-div">
-                <form action="">
+                <form id="submit_streamer_form">
                     <h2>Streamer's Name</h2>
-                    <input id="streamer_name" type="text" placeholder="Enter Streamer's Name">
-                    <h2>Streamer's Platforms</h2>
-                    <input id="streamer_platform" type="text" placeholder="Enter Streamer's Platforms">
+                    <input id="streamer_name" type="text" placeholder="Enter Streamer's Name" required>
+                    <h2>Twitch</h2>
+                    <input id="twitch_url" type="text" placeholder="Enter twitch url" required pattern="https://(www.)?twitch.com/.+">
                     <h2>Streamer's Social Links</h2>
-                    <input id="streamer_links_1" type="text" placeholder="(Enter url here)">
-                    <input id="streamer_links_2" type="text" placeholder="(Enter url here)">
-                    <input id="streamer_links_3" type="text" placeholder="(Enter url here)">
-                    <input id="streamer_links_4" type="text" placeholder="(Enter url here)">
-                    <button id="submit" type="submit" value="Submit!">Submit!</button>
+                    <input id="youtube_url" type="text" placeholder="(Enter youtube url here)">
+                    <input id="twitter_url" type="text" placeholder="(Enter twitter url here)">
+                    <button type="button" value="Submit!" onclick="submit_streamer()">Submit!</button>
                 </form>
                 <div class="common-countdown"></div>
             </div>
         </div>
+
+        <div id="snackbar">some message</div>
     </section>
 
-    <section id="vote_section">
+    <section id="vote_section" style="display:none">
       <img src="./media/Background.png" class="background_img" alt="Voting platform background">
         <div class="vote_section-container">
           <div class="common-div">
@@ -336,8 +281,5 @@
           </div>
         </div>
     </footer>
-
-
-    <script src="./app_voting_platform.js"></script>
 </body>
 </html>

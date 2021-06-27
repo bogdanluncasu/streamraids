@@ -1,0 +1,22 @@
+{
+  "name": "streamraids",
+  "version": "1.0.0",
+  "description": "Streamraids.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "browserify -t brfs index.js -o bundle.js"
+  },
+  "author": "",
+  "license": "",
+  "dependencies": {
+    "eth-sig-util": "^2.3.0",
+    "ethereumjs-util": "^5.1.1",
+    "ethjs": "^0.3.0"
+  },
+  "devDependencies": {
+    "babel-runtime": "^6.26.0",
+    "brfs": "^1.4.3",
+    "browserify": "^16.2.3"
+  }
+}
