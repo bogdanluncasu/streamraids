@@ -61,10 +61,9 @@ $(document).ready ( function () {
     $("#wallet_address").text(account);
     $("#connect_label").text("CONNECTED");
     $.ajax({
-        type: "POST",
+        type: "GET",
         url: backend_url+"wallet/ballance/"+account,
         async: true,
-        data: JSON.stringify(request_body),
         contentType: 'application/json'
     }).done(function(data) {
       $("#srt_amount").text(data);
