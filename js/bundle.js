@@ -17,7 +17,7 @@ $(document).ready ( function () {
   }
 
   var accounts = undefined;
-  var connected = False;
+  var connected = false;
 
   enable_submissions = function(){
     $("#auth_section").hide();
