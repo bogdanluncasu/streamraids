@@ -61,7 +61,7 @@ $(document).ready ( function () {
 
   set_wallet_details = function(account){
     account_text = account.substring(0,5)+"..."+account.substring(account.length-5,account.length);
-    $("#wallet_address").text(account);
+    $("#wallet_address").text(account_text);
     $("#connect_label").text("CONNECTED");
     $.ajax({
         type: "GET",
@@ -69,9 +69,9 @@ $(document).ready ( function () {
         async: true,
         contentType: 'application/json'
     }).done(function(data) {
-      srt_amount = BigInt(data);
-      srt_amount /= BigInt(10000000000000);
-      $("#srt_amount").text(srt_amount+"T");
+      srt_amount = Number(data);
+      srt_amount /= Number(1000000000000000000000);
+      $("#srt_amount").text(srt_amount.toPrecision(3)+"T");
     }).fail(function()  {
       console.log("error occured when fetching amount");
     });
@@ -87,6 +87,19 @@ $(document).ready ( function () {
       });
     }
   });
+
+  if(ethereum!==undefined){
+    async function getAccount() {
+      accounts = await ethereum.enable();
+      set_wallet_details(accounts[0]);
+    }
+
+    ethereum.on('accountsChanged', function (accounts) {
+      getAccount();
+    })
+
+    getAccount();
+  }
 
   $("#signTransaction").on("click", function() {
     console.log("signTransaction");
