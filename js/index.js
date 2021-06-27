@@ -58,15 +58,18 @@ $(document).ready ( function () {
   }
 
   set_wallet_details = function(account){
+    account_text = account.substring(0,5)+"..."+account.substring(account.length-5,account.length);
     $("#wallet_address").text(account);
     $("#connect_label").text("CONNECTED");
     $.ajax({
         type: "GET",
-        url: backend_url+"wallet/ballance/"+account,
+        url: backend_url+"wallet/balance/"+account,
         async: true,
         contentType: 'application/json'
     }).done(function(data) {
-      $("#srt_amount").text(data);
+      srt_amount = BigInt(data);
+      srt_amount /= BigInt(10000000000000);
+      $("#srt_amount").text(srt_amount+"T");
     }).fail(function()  {
       console.log("error occured when fetching amount");
     });
