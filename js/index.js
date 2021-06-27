@@ -37,6 +37,8 @@ $(document).ready ( function () {
       "twitterUrl": twitter_url==="" ? null : twitter_url
     }
 
+    $("#wait_loader").show();
+    $("#submit_vote_button").attr("disabled", true);
     console.log(request_body)
     $.ajax({
         type: "POST",
@@ -49,11 +51,15 @@ $(document).ready ( function () {
       $("#snackbar").text("Application successfully submitted.")
       $("#snackbar").addClass("show");
       setTimeout(function(){ $("#snackbar").removeClass("show"); }, 3000);
+      $("#wait_loader").hide();
+      $("#submit_vote_button").attr("disabled", false);
     }).fail(function()  {
       console.log("error occured");
       $("#snackbar").text("Application could have not been submitted. There may be already an application for this user.")
       $("#snackbar").addClass("show");
       setTimeout(function(){ $("#snackbar").removeClass("show"); }, 3000);
+      $("#wait_loader").hide();
+      $("#submit_vote_button").attr("disabled", false);
     });
 
   }
