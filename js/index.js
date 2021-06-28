@@ -99,6 +99,7 @@ $(document).ready ( function () {
     async function getAccount() {
       accounts = await ethereum.enable();
       set_wallet_details(accounts[0]);
+      enable_submissions();
     }
 
     ethereum.on('accountsChanged', function (accounts) {
