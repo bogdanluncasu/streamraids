@@ -7,6 +7,8 @@ $(document).ready ( function () {
   var backend_url = "https://streamraidsbackend.azurewebsites.net/"
   // var backend_url = "http://localhost:80/"
 
+  var globalData = undefined;
+
   if (typeof window.ethereum !== 'undefined') {
     console.log('MetaMask is installed!');
     is_metamask_installed = true;
@@ -98,7 +100,10 @@ $(document).ready ( function () {
         url: backend_url+"streamer",
         async: true,
         contentType: 'application/json'
-    }).done(populate_leaderboard).fail(function()  {
+    }).done(function(data){
+      globalData = data;
+      populate_leaderboard(data);
+    }).fail(function()  {
       console.log("error occured when fetching streamers");
     });
   }
@@ -240,4 +245,12 @@ $(document).ready ( function () {
         });
 
   }
+
+  $("#search_streamer").on("input", function(){
+    if(globalData!==undefined){
+      searchValue = $("#search_streamer").val();
+      const result = globalData.filter(data => data.name.includes(searchValue));
+      populate_leaderboard(result);
+    }
+  })
 });
