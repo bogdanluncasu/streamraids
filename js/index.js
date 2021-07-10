@@ -4,8 +4,8 @@ var sigUtil = require('eth-sig-util')
 
 $(document).ready ( function () {
   var is_metamask_installed = false;
-  // var backend_url = "https://streamraidsbackend.azurewebsites.net/"
-  var backend_url = "http://localhost:80/"
+  var backend_url = "https://streamraidsbackend.azurewebsites.net/"
+  // var backend_url = "http://localhost:80/"
 
   if (typeof window.ethereum !== 'undefined') {
     console.log('MetaMask is installed!');
