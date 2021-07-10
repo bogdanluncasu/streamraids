@@ -36,9 +36,9 @@
         <div class="wallet_div">
           <div class="wallet_div-metamask">
             <img src="./media/MetaMask_Fox.png" alt="Streamraids Logo">
-            <span id="wallet_address">Wallet Address</span>
+            <span id="wallet_address">Connect</span>
           </div>
-          <div class="wallet_div-metamask">
+          <div class="wallet_div-metamask" id="wallet_div_amount">
             <img src="./media/Logotype_SVG.svg" alt="Streamraids Logo">
             <span id="srt_amount">SRT amount</span>
           </div>
@@ -90,7 +90,7 @@
                     <h2 class="submit_streamer_form_item">Streamer's Name</h2>
                     <input class="submit_streamer_form_item" id="streamer_name" type="text" placeholder="Enter Streamer's Name" required>
                     <h2 class="submit_streamer_form_item" >Twitch</h2>
-                    <input class="submit_streamer_form_item" id="twitch_url" type="text" placeholder="Enter twitch url" required pattern="https://(www.)?twitch.com/.+">
+                    <input class="submit_streamer_form_item" id="twitch_url" type="text" placeholder="Enter twitch url" required pattern="https://(www.)?twitch.(com|tv)/.+">
                     <h2 class="submit_streamer_form_item" >Streamer's Social Links</h2>
                     <input class="submit_streamer_form_item" id="youtube_url" type="text" placeholder="(Enter youtube url here)">
                     <input class="submit_streamer_form_item" id="twitter_url" type="text" placeholder="(Enter twitter url here)">

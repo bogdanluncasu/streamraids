@@ -4,8 +4,8 @@ var sigUtil = require('eth-sig-util')
 
 $(document).ready ( function () {
   var is_metamask_installed = false;
-  var backend_url = "https://streamraidsbackend.azurewebsites.net/"
-  // var backend_url = "http://localhost:80/"
+  // var backend_url = "https://streamraidsbackend.azurewebsites.net/"
+  var backend_url = "http://localhost:80/"
 
   var globalData = undefined;
 
@@ -34,7 +34,6 @@ $(document).ready ( function () {
     get_list_of_streamers();
   };
 
-
   compare_streamers = function( a, b ) {
     if ( a.votes > b.votes ){
       return -1;
@@ -62,27 +61,48 @@ $(document).ready ( function () {
         streamer.imageUrl = "https://www.streamraids.net/media/logo-srt.png";
       }
 
+      twitch_image = "./media/twitch_white.png";
+      youtube_image = "./media/youtube_white.png";
+      twitter_image = "./media/twitter_white.png";
       if(rank<=5){
-        div = `<div class="vote_section-leaderboard_tag" id="${streamer.id}">
+        twitch_image = "./media/twitch.svg";
+        youtube_image = "./media/youtube.svg";
+        twitter_image = "./media/twitter.svg";
+      }
+
+      media = `<a href="${streamer.twitchUrl}" target="_blank"><img class="vote_section-leaderboard_tag_streamer_socials" src="${twitch_image}" alt="twitch"></a>`
+      if(streamer.youtubeUrl!==null){
+        media+=`<a href="${streamer.youtubeUrl}" target="_blank"><img class="vote_section-leaderboard_tag_streamer_socials" src="${youtube_image}" alt="youtube"></a>`
+      }
+
+      if(streamer.twitterUrl!==null){
+        media+=`<a href="${streamer.twitterUrl}" target="_blank"><img class="vote_section-leaderboard_tag_streamer_socials" src="${twitter_image}" alt="twitter"></a>`
+      }
+
+      if(rank<=5){
+        div = `<div class="vote_section-leaderboard_tag" >
               <h1 class="vote_section-leaderboard_tag_number">#${rank}</h1>
-              <div class="vote_section-leaderboard_tag_streamer">
-                <div class="vote_section-leaderboard_tag_streamer_img">
+              <div class="vote_section-leaderboard_tag_streamer" >
+                <div class="vote_section-leaderboard_tag_streamer_img" id="${streamer.id}_img">
                   <img src="${streamer.imageUrl}" alt="">
                 </div>
-                <div class="vote_section-leaderboard_tag_streamer_name"><p>${streamer.name}</p></div>
+                <div class="vote_section-leaderboard_tag_streamer_name" id="${streamer.id}_name"><p>${streamer.name}</p></div>
                 <div class="vote_section-leaderboard_tag_streamer_plus">
+                  ${media}
                   <button><i class="fas fa-plus">${streamer.votes}</i></button>
                 </div>
               </div>
+
             </div>`;
           $("#leaderboard_div").append(div);
         } else {
-          div = `<div class="vote_section-list_tag_streamer"  id="${streamer.id}">
-            <div class="vote_section-list_tag_streamer_img">
+          div = `<div class="vote_section-list_tag_streamer">
+            <div class="vote_section-list_tag_streamer_img" id="${streamer.id}_img">
               <img src="${streamer.imageUrl}" alt="">
             </div>
-            <div class="vote_section-list_tag_streamer_name"><p>${streamer.name}</p></div>
+            <div class="vote_section-list_tag_streamer_name" id="${streamer.id}_name"><p>${streamer.name}</p></div>
             <div class="vote_section-list_tag_streamer_plus">
+              ${media}
               <button><i class="fas fa-plus invert">${streamer.votes}</i></button>
             </div>
           </div>`
@@ -90,7 +110,8 @@ $(document).ready ( function () {
           $("#voting_over_5").append(div);
         }
 
-        $(`#${streamer.id}`).on("click", vote(streamer.id));
+        $(`#${streamer.id}_img`).on("click", vote(streamer.id));
+        $(`#${streamer.id}_name`).on("click", vote(streamer.id));
     }
   }
 
@@ -168,7 +189,7 @@ $(document).ready ( function () {
     });
   }
 
-  $("#enableMetamask").on("click", function() {
+  connect = function() {
     if(!is_metamask_installed) return;
     if(connected) return;
     console.log("Connect");
@@ -177,23 +198,28 @@ $(document).ready ( function () {
         accounts = result;
         set_wallet_details(accounts[0]);
         connected=true;
+        $("#wallet_div_amount").show();
       });
     }
-  });
-
-  if(ethereum!==undefined){
-    async function getAccount() {
-      accounts = await ethereum.enable();
-      set_wallet_details(accounts[0]);
-      enable_submissions();
-    }
-
-    ethereum.on('accountsChanged', function (accounts) {
-      getAccount();
-    })
-
-    getAccount();
   }
+
+  $("#enableMetamask").on("click", connect);
+  $("#wallet_address").on("click", connect);
+  $("#wallet_div_amount").hide();
+
+  // if(ethereum!==undefined){
+  //   async function getAccount() {
+  //     accounts = await ethereum.enable();
+  //     set_wallet_details(accounts[0]);
+  //     enable_submissions();
+  //   }
+  //
+  //   ethereum.on('accountsChanged', function (accounts) {
+  //     getAccount();
+  //   })
+  //
+  //   getAccount();
+  // }
 
   vote = function(id) {
     return function(){

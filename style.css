@@ -932,6 +932,20 @@ transition: 0.5s;
     justify-content: center;
 }
 
+.vote_section-leaderboard_tag_streamer_socials{
+    height: 1.8rem;
+    width: 1.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.2rem;
+}
+
+.vote_section-leaderboard_tag_streamer_socials:hover{
+  transform: scale(1.1) translateY(-0.3rem);
+  transition: 0.5s;
+}
+
 .vote_section-leaderboard_tag_streamer_img img{
     height: 100%;
     width: 100%;
@@ -1110,7 +1124,7 @@ input:invalid:required {
 
 @media(max-height:600px),
 (max-width:1200px){
-        
+
     .background_img{
         display: none;
         position: absolute;
@@ -1153,7 +1167,7 @@ input:invalid:required {
     .submit_section-div{
         margin-top: 1rem;
     }
-    
+
 }
 
 @media only screen and (hover: none) and (pointer: coarse){
