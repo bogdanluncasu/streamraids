@@ -1,12 +1,12 @@
 (function(){function r(e,n,t){function o(i,f){if(!n[i]){if(!e[i]){var c="function"==typeof require&&require;if(!f&&c)return c(i,!0);if(u)return u(i,!0);var a=new Error("Cannot find module '"+i+"'");throw a.code="MODULE_NOT_FOUND",a}var p=n[i]={exports:{}};e[i][0].call(p.exports,function(r){var n=e[i][1][r];return o(n||r)},p,p.exports,r,e,n,t)}return n[i].exports}for(var u="function"==typeof require&&require,i=0;i<t.length;i++)o(t[i]);return o}return r})()({1:[function(require,module,exports){
-(function (Buffer){(function (){
 var ethUtil = require('ethereumjs-util')
 var sigUtil = require('eth-sig-util')
 
 
 $(document).ready ( function () {
   var is_metamask_installed = false;
-  var backend_url = "https://streamraidsbackend.azurewebsites.net/"
+  // var backend_url = "https://streamraidsbackend.azurewebsites.net/"
+  var backend_url = "http://localhost:80/"
 
   if (typeof window.ethereum !== 'undefined') {
     console.log('MetaMask is installed!');
@@ -21,7 +21,87 @@ $(document).ready ( function () {
 
   enable_submissions = function(){
     $("#auth_section").hide();
+    $("#vote_section").hide();
     $("#submit_section").show();
+  };
+
+  enable_voting = function(){
+    $("#auth_section").hide();
+    $("#vote_section").show();
+    $("#submit_section").hide();
+
+    get_list_of_streamers();
+  };
+
+
+  compare_streamers = function( a, b ) {
+    if ( a.votes > b.votes ){
+      return -1;
+    }
+    if ( a.votes < b.votes ){
+      return 1;
+    }
+    return 0;
+  }
+
+  populate_leaderboard = function(data){
+    //cleanup
+
+    $("#leaderboard_div").html("");
+    $("#voting_over_5").html("");
+    // sort
+
+    sorted_data = data.sort(compare_streamers);
+
+    // get top 5
+    rank = 0
+    for(const streamer of sorted_data){
+      rank += 1;
+      if(streamer.imageUrl === null){
+        streamer.imageUrl = "https://www.streamraids.net/media/logo-srt.png";
+      }
+
+      if(rank<=5){
+        div = `<div class="vote_section-leaderboard_tag" id="${streamer.id}">
+              <h1 class="vote_section-leaderboard_tag_number">#${rank}</h1>
+              <div class="vote_section-leaderboard_tag_streamer">
+                <div class="vote_section-leaderboard_tag_streamer_img">
+                  <img src="${streamer.imageUrl}" alt="">
+                </div>
+                <div class="vote_section-leaderboard_tag_streamer_name"><p>${streamer.name}</p></div>
+                <div class="vote_section-leaderboard_tag_streamer_plus">
+                  <button><i class="fas fa-plus">${streamer.votes}</i></button>
+                </div>
+              </div>
+            </div>`;
+          $("#leaderboard_div").append(div);
+        } else {
+          div = `<div class="vote_section-list_tag_streamer"  id="${streamer.id}">
+            <div class="vote_section-list_tag_streamer_img">
+              <img src="${streamer.imageUrl}" alt="">
+            </div>
+            <div class="vote_section-list_tag_streamer_name"><p>${streamer.name}</p></div>
+            <div class="vote_section-list_tag_streamer_plus">
+              <button><i class="fas fa-plus invert">${streamer.votes}</i></button>
+            </div>
+          </div>`
+
+          $("#voting_over_5").append(div);
+        }
+
+        $(`#${streamer.id}`).on("click", vote(streamer.id));
+    }
+  }
+
+  get_list_of_streamers = function(){
+    $.ajax({
+        type: "GET",
+        url: backend_url+"streamer",
+        async: true,
+        contentType: 'application/json'
+    }).done(populate_leaderboard).fail(function()  {
+      console.log("error occured when fetching streamers");
+    });
   }
 
   submit_streamer = function(){
@@ -111,41 +191,59 @@ $(document).ready ( function () {
     getAccount();
   }
 
-  $("#signTransaction").on("click", function() {
-    console.log("signTransaction");
+  vote = function(id) {
+    return function(){
+      console.log("signTransaction");
 
-    if(accounts !== undefined){
-      var method = 'personal_sign';
-      var message = "message2besigned";
-      var account = accounts[0];
-      console.log(account);
-      msg = ethUtil.bufferToHex(new Buffer(message));
+      if(accounts !== undefined){
+        var method = 'personal_sign';
+        var message = "Signing "+id;
+        var account = accounts[0];
 
-      ethereum.request({
-        method: method,
-        params: [msg, account],
-        from: account
-      }).then((res)=>{
-        nonce = "\x19Ethereum Signed Message:\n" + message.length + message
-        nonce = ethUtil.keccak(Buffer.from(nonce, "utf-8"))
-        const { v, r, s } = ethUtil.fromRpcSig(res)
-        const pubKey = ethUtil.ecrecover(ethUtil.toBuffer(nonce), v, r, s)
-        const addrBuf = ethUtil.pubToAddress(pubKey)
-        const addr = ethUtil.bufferToHex(addrBuf)
-        console.log(res);
-        console.log(pubKey);
-        console.log(addr);
-
-      }).catch((err) => {
-        console.log(err);
-      });
+        ethereum.request({
+          method: method,
+          params: [message, account],
+          from: account
+        }).then((res)=>{
+          vote_request(id, account, res);
+        }).catch((err) => {
+          console.log(err);
+        });
+      }
     }
 
-  });
+  };
+
+  vote_request = function(id, addr, sig){
+        request_body = {
+          "signature": sig,
+          "address": addr
+        }
+
+        $.ajax({
+            type: "POST",
+            url: backend_url+"vote/"+id,
+            async: true,
+            data: JSON.stringify(request_body),
+            contentType: 'application/json'
+        }).done(function() {
+          console.log("successfully submitted");
+          $("#snackbar").text("Successfully voted.")
+          $("#snackbar").addClass("show");
+          setTimeout(function(){ $("#snackbar").removeClass("show"); }, 3000);
+          $("#submit_vote_button").attr("disabled", false);
+        }).fail(function()  {
+          console.log("error occured");
+          $("#snackbar").text("Vote could not have been processed.")
+          $("#snackbar").addClass("show");
+          setTimeout(function(){ $("#snackbar").removeClass("show"); }, 3000);
+          $("#submit_vote_button").attr("disabled", false);
+        });
+
+  }
 });
 
-}).call(this)}).call(this,require("buffer").Buffer)
-},{"buffer":10,"eth-sig-util":30,"ethereumjs-util":47}],2:[function(require,module,exports){
+},{"eth-sig-util":30,"ethereumjs-util":47}],2:[function(require,module,exports){
 (function (global){(function (){
 'use strict';
 
