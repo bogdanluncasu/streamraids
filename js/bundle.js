@@ -2,11 +2,10 @@
 var ethUtil = require('ethereumjs-util')
 var sigUtil = require('eth-sig-util')
 
-
 $(document).ready ( function () {
   var is_metamask_installed = false;
-  var backend_url = "https://streamraidsbackend.azurewebsites.net/"
-  // var backend_url = "http://localhost:80/"
+  // var backend_url = "https://streamraidsbackend.azurewebsites.net/"
+  var backend_url = "http://localhost:80/"
 
   var globalData = undefined;
 
@@ -20,11 +19,15 @@ $(document).ready ( function () {
 
   var accounts = undefined;
   var connected = false;
+  var submission_enabled = false;
+  var vote_enabled = false;
 
   enable_submissions = function(){
     $("#auth_section").hide();
     $("#vote_section").hide();
     $("#submit_section").show();
+
+    submission_enabled = true;
   };
 
   enable_voting = function(){
@@ -32,6 +35,9 @@ $(document).ready ( function () {
     $("#vote_section").show();
     $("#submit_section").hide();
 
+    vote_enabled = true;
+
+    get_available_votes();
     get_list_of_streamers();
   };
 
@@ -200,6 +206,9 @@ $(document).ready ( function () {
         set_wallet_details(accounts[0]);
         connected=true;
         $("#wallet_div_amount").show();
+        if(vote_enabled){
+          get_available_votes();
+        }
       });
     }
   }
@@ -208,19 +217,22 @@ $(document).ready ( function () {
   $("#wallet_address").on("click", connect);
   $("#wallet_div_amount").hide();
 
-  // if(ethereum!==undefined){
-  //   async function getAccount() {
-  //     accounts = await ethereum.enable();
-  //     set_wallet_details(accounts[0]);
-  //     enable_submissions();
-  //   }
-  //
-  //   ethereum.on('accountsChanged', function (accounts) {
-  //     getAccount();
-  //   })
+  if(ethereum!==undefined){
+    async function getAccount() {
+      accounts = await ethereum.enable();
+      set_wallet_details(accounts[0]);
+
+      if(vote_enabled){
+        get_available_votes();
+      }
+    }
+
+    ethereum.on('accountsChanged', function (accounts) {
+      getAccount();
+    })
   //
   //   getAccount();
-  // }
+  }
 
   vote = function(id) {
     return function(){
@@ -258,14 +270,30 @@ $(document).ready ( function () {
             data: JSON.stringify(request_body),
             contentType: 'application/json'
         }).done(function() {
-          console.log("successfully submitted");
           $("#snackbar").text("Successfully voted.")
           $("#snackbar").addClass("show");
           setTimeout(function(){ $("#snackbar").removeClass("show"); }, 3000);
           $("#submit_vote_button").attr("disabled", false);
-        }).fail(function()  {
+          get_available_votes();
+          get_list_of_streamers();
+        }).fail(function(xhr, status, error)  {
           console.log("error occured");
-          $("#snackbar").text("Vote could not have been processed.")
+          error_message = xhr.responseJSON;
+
+          display_message = "Vote could not have been processed."
+          console.log(xhr);
+
+          if(error_message==="INVALID_STREAM_ID"){
+            display_message = "The streamer does not exist on our platform.";
+          } else if(error_message==="INVALID_CONSTRAINT"){
+            display_message = "Voting is not open yet.";
+          } else if(error_message==="INVALID_NO_VOTES_AVAILABLE"){
+            display_message = "You have no available votes.";
+          } else if(error_message==="INVALID_SRT_AMOUNT_AVAILABLE"){
+            display_message = "You need to have SRT in your wallet in order to vote."
+          }
+
+          $("#snackbar").text(display_message)
           $("#snackbar").addClass("show");
           setTimeout(function(){ $("#snackbar").removeClass("show"); }, 3000);
           $("#submit_vote_button").attr("disabled", false);
@@ -273,13 +301,41 @@ $(document).ready ( function () {
 
   }
 
+  get_available_votes = function(){
+    if(accounts===undefined){
+      return;
+    }
+
+    $.ajax({
+        type: "GET",
+        url: backend_url+"wallet/"+accounts[0],
+        async: true
+    }).done(function(data) {
+      $("#number_of_votes_available").text("Number of votes available: "+data.remainingVotes);
+    }).fail(function(xhr, status, error)  {});
+  }
+
   $("#search_streamer").on("input", function(){
     if(globalData!==undefined){
       searchValue = $("#search_streamer").val();
-      const result = globalData.filter(data => data.name.includes(searchValue));
+      const result = globalData.filter(data => data.name.toLowerCase().includes(searchValue.toLowerCase()));
       populate_leaderboard(result);
     }
   })
+
+
+  if(location.search!==""){
+    location_tokens = location.search.split("=");
+
+    if(location_tokens.length===2 && location_tokens[0]==="?view"){
+      view = location_tokens[1];
+      if(view==="vote"){
+        enable_voting();
+      } else if (view === "submit"){
+        enable_submissions();
+      }
+    }
+  }
 });
 
 },{"eth-sig-util":30,"ethereumjs-util":47}],2:[function(require,module,exports){
